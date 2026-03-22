@@ -4,6 +4,19 @@
 std::mt19937_64 IntRandom::mt64;
 
 int main(int argc, char* argv[]) {
+    // -------------------------------//
+    //            新增功能             //
+    // -------------------------------//
+    //       傳輸Json給網站功能
+    #if COMMUNICATE_WITH_WEBSITE
+        
+        
+        return 0;
+    #endif // 0
+
+
+
+
     initializeManhattanDistance();
 
     vector<string> argvVec;
