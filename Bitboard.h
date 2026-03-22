@@ -1,5 +1,5 @@
-﻿//i行j列目(i>=0, j>=0)をマスi * 6 + jとおく.
-//用意するメソッド：終了条件(2種類), 動かす
+﻿// 假設 i 行 j 列 (i>=0, j>=0) 為棋盤的第 i * 6 + j 格（共 0~35 格）。
+// 準備的方法包含：結束條件判定 (2種類型)、移動棋子
 #pragma once
 #include "IncludeLib.h"
 
@@ -39,7 +39,7 @@ void initializeManhattanDistance() {
 
 
 // 計算有幾個 bit 是 1（即：盤面上還有幾顆這種類型的棋子）
-//ビットカウント
+// 利用編譯器內建的硬體指令 popcnt 達到極速計算
 inline int bitCount(long long x) {
 #if defined(_MSC_VER)
 	return int(__popcnt64(x));
@@ -50,6 +50,7 @@ inline int bitCount(long long x) {
 }
 
 // 找到最低位的 1 在哪裡（即：找棋盤上編號最小的棋子位置）
+// 同樣利用硬體指令 BitScanForward / bsfq 加速
 inline int lsb(long long x) {
 #if defined(_MSC_VER)
 	unsigned long index;
@@ -62,7 +63,8 @@ inline int lsb(long long x) {
 #endif
 }
 
-// 找到最低位的 1 的位置，並將那個 1 變成 0（即：取出並移除該棋子）
+// 找到最低位的 1 的位置，並將那個 1 變成 0（即：取出並把該棋子從遮罩中移除）
+// 這在歷遍所有棋子時非常常用（while迴圈搭配 popLsb）
 inline int popLsb(long long& b) {
 	const int index = lsb(b);
 	//b &= ~(1<<index);
@@ -74,15 +76,15 @@ struct BitBoard {
 public:
 
 	// 使用 5 個 64-bit 整數來記錄五種棋子的位置。
-	// 若第 i 個 bit 為 1，代表第 i 格有該種棋子。
-	long long existR;	//マスiに自分の赤がある ⇔ (existR >> i) & 1 == 1とする。
-	long long existB;
-	long long existP;	//マスiに敵の駒がある ⇔ (existP >> i) & 1 == 1とする。Purple駒…取ったら赤に変化し, 脱出するときは青に変化する.
-	long long existEB;
-	long long existER;
+	// 如果 (existR >> i) & 1 == 1，代表第 i 格有己方的紅棋。
+	long long existR;	// 己方紅棋 (Red) -> 通常是壞幽靈
+	long long existB;   // 己方青/藍棋 (Blue) -> 通常是好幽靈
+	long long existP;	// 敵方的紫棋 (Purple) -> 未翻開/未知的幽靈。被吃掉時會根據真實身份變成敵方紅或青棋。
+	long long existEB;  // 敵方青/藍棋 (Enemy Blue)
+	long long existER;  // 敵方紅棋 (Enemy Red)
 
 	// 將字串格式 ("......B....u...") 轉換成 Bitboard 格式
-	//board[i]…マスiにある駒の種類(R, B, u)
+	// board[i] 表示第 i 格的棋子種類
 	void toBitBoard(string board) {
 		existR = existB = existP = existEB = existER = 0;
 		for (int i = 0; i < 36; i++) {
@@ -107,20 +109,25 @@ public:
 		return board;
 	}
 
-	// 產生所有合法的移動步數
-	//手の生成. 手の個数を返す(teban=0 : 自分手番, teban=1:敵手番). from[], to[]に手を格納. (from, toはサイズ32以上の配列）
-	//kiki[5 * i + j] = マスiと隣接するj番目のマスの番号. なければ-1。
+	// 產生所有合法的移動步數，回傳可走步數的總數。
+	// teban = 回合 (0: 己方回合, 1: 敵方回合)
+	// from[], to[] 會把產生的起點與終點存進去。
 	int makeMoves(int teban, int kiki[], int from[], int to[]) {
 		int pos, i, cnt = 0;
 		for (pos = 0; pos < 36; pos++) {
+			// 如果輪到己方，但該格沒有己方的棋 (R或B)，就跳過
 			if (teban == 0 && !(((existR | existB) >> pos) & 1)) continue;
+			// 如果輪到敵方，但該格沒有敵方的棋 (P或EB或ER)，就跳過
 			if (teban == 1 && !(((existP | existEB | existER) >> pos) & 1)) continue;
+			
+			// kiki 陣列存了每一格相鄰的格子（上下左右），-1 代表碰壁
 			for (i = pos * 5; kiki[i] != -1; i++) {
 				int npos = kiki[i];
-				//マスpos -> マスnposと駒を動かせるか？（自駒とぶつからないか）
+				// 檢查是否會吃到自己的棋子（不能踩在自己的棋子上）
 				if (teban == 0 && (((existR | existB) >> npos) & 1)) continue;
 				if (teban == 1 && (((existP | existEB | existER) >> npos) & 1)) continue;
-				//動かせる
+				
+				// 是一步合法的移動，記錄下來
 				from[cnt] = pos;
 				to[cnt] = npos;
 				cnt++;
@@ -152,7 +159,12 @@ public:
 
 	}
 
-	//先手の赤を動かした後の状態に更新する。
+	// --- 下列是具體的移動執行函式 ---
+	// 邏輯：清除起點 (~(1LL << from))，佔領終點 (|= (1LL << to))
+	// 同時清除終點上可能存在的敵方棋子（吃子邏輯）
+
+
+	// 移動己方紅棋
 	inline void moveR(int from, int to) {
 		existR &= ~(1LL << from);
 		existR |= (1LL << to);
@@ -161,6 +173,7 @@ public:
 		existP &= ~(1LL << to);
 	}
 
+	// 移動己方青棋
 	inline void moveB(int from, int to) {
 		existB &= ~(1LL << from);
 		existB |= (1LL << to);
@@ -169,6 +182,7 @@ public:
 		existP &= ~(1LL << to);
 	}
 
+	// 移動敵方紫棋
 	inline void moveP(int from, int to) {
 		existP &= ~(1LL << from);
 		existP |= (1LL << to);
@@ -176,6 +190,7 @@ public:
 		existB &= ~(1LL << to);
 	}
 
+	// 移動敵方青棋
 	inline void moveEB(int from, int to) {
 		existEB &= ~(1LL << from);
 		existEB |= (1LL << to);
@@ -183,6 +198,7 @@ public:
 		existB &= ~(1LL << to);
 	}
 
+	// 移動敵方紅棋
 	inline void moveER(int from, int to) {
 		existER &= ~(1LL << from);
 		existER |= (1LL << to);
@@ -190,6 +206,7 @@ public:
 		existB &= ~(1LL << to);
 	}
 
+	// 通用的移動介面，會自動判斷起點是哪種棋子並呼叫對應的 move 函式
 	void move(int from, int to) {
 		if ((existR >> from) & 1)
 			moveR(from, to);
@@ -210,62 +227,97 @@ public:
 
 	}
 
+	// 判斷遊戲是否結束，回傳勝利方
+	// 回傳值：0,2 代表己方贏；1,3 代表敵方贏；4 代表尚未結束
+	// pnum：用來判斷未知紫棋(P)的數量
 	int check(int player, int pnum, const string& subMode) {
-		//どちらが勝ち状態かを返す. (0,2…自分, 1,3…敵, 4…不明). 紫駒がpnum個以下なら敵の勝ち.
+		// 敵方獲勝條件：己方青棋全被吃光，或敵方紅棋死光且剩下的青+紫棋數小於等於 pnum
 		if (existB == 0 || (existER == 0 && bitCount(existP | existEB) <= pnum)) return 1;
 		bool myRedAllCaptured = (existR == 0);
 		bool enBlueAllCaptured = (existEB == 0 && existER != 0 && existP == 0);
+		
+		// 特殊規則模式 ("r" 模式)
 		if (subMode == "r") {
 			if (enBlueAllCaptured) { return 0; }
 		}
 		else {
+			// 一般己方獲勝條件：己方紅棋被吃光 (敵方吃到壞幽靈)，或敵方青棋被吃光
 			if (myRedAllCaptured || enBlueAllCaptured) { return 0; }
 		}
+
+		// 脫出條件：己方青棋踩在己方脫出口
 		if (player == 0 && ((existB & playerExitBB) != 0)) return 2;
+		// 脫出條件：敵方青/紫棋踩在敵方脫出口
 		if (player == 1 && (((existP | existEB) & oppExitBB) != 0)) return 3;
-		return 4;
+
+		return 4; // 繼續遊戲
 	}
 
-	// 先手側の脱出口と一番近い先手側青駒との距離
-	// 探索打ち切り用・特徴量用
+	// 計算己方青色（藍色）幽靈距離「脫出口」的最短距離
+	// 用途 1：探索剪枝 (Pruning)。如果最短距離大於剩餘的搜尋深度，代表絕對來不及脫出，直接砍掉該分支。
+	// 用途 2：特徵量 (Feature)。可以作為評估盤面好壞的依據。
 	int minEscapeAction(void) {
-		int minAction = 100;
-		long long b = existB;
+		int minAction = 100;   // 初始設一個極大值
+		long long b = existB;  // 取得己方所有青鬼的位元棋盤 (Bitboard)
+
+		// 只要盤面上還有青鬼
 		while (b != 0) {
+			// popLsb: 拔出並回傳最右邊的 1 (Least Significant Bit) 的位置 ID
+			// 也就是快速找出下一個青鬼所在的格子編號
 			int id = popLsb(b);
+
+			// 計算這個青鬼到左上角 (0) 和右上角 (5) 兩個脫出口的曼哈頓距離，取比較近的那個
 			int dist = min(manhattanDistance[id][0], manhattanDistance[id][5]);
+
+			// 更新目前盤面上所有青鬼中，距離脫出口最近的距離
 			if (minAction > dist) minAction = dist;
 		}
 		return minAction;
 	}
 
-	// 敵青・紫駒を全て取るのにかかる（両方含む）手数の下限値
-	// 探索打ち切り用
+	// 計算「吃掉敵方所有青鬼與紫鬼(未翻牌/未知)」所需步數的理論下限值
+	// 用途：探索剪枝。如果剩餘步數不夠吃光關鍵敵方棋子，直接停止這條路線的搜尋。
 	int minCaptureAction(void) {
+		// 鎖定目標：敵方的紫鬼 (existP) 與敵方的青鬼 (existEB)
 		long long oppB = existP | existEB;
+		// farestToOppDistance: 所有目標中，「最難被吃掉」(距離最近的己方棋子最遠) 的距離
 		int farestToOppDistance = 0;
+		// overallNearestDistance: 盤面上「隨便吃掉一隻目標」的最短距離
 		int overallNearestDistance = 100;
+
+		// 遍歷每一個敵方目標
 		while (oppB != 0) {
-			int id1 = popLsb(oppB);
-			long long b = (existB | existR);
+			int id1 = popLsb(oppB);  // 抓出一隻敵方目標的位置
+			long long b = (existB | existR);  // 取得己方所有的棋子 (青鬼 + 赤鬼)
+
+			// 計算「這隻敵方目標」距離「最近的己方棋子」有多遠
 			int nearestToOppDistance = 100;
+
 			while (b != 0) {
-				int id2 = popLsb(b);
-				int dist = manhattanDistance[id1][id2];
+				int id2 = popLsb(b);  // 抓出己方棋子
+				int dist = manhattanDistance[id1][id2];  // 查表取得曼哈頓距離
 				nearestToOppDistance = min(nearestToOppDistance, dist);
 				overallNearestDistance = min(overallNearestDistance, dist);
 			}
+			// 更新「最難被吃掉」的目標距離
 			farestToOppDistance = max(farestToOppDistance, nearestToOppDistance);
 		}
+		// 理論下限步數計算：
+		// 要吃掉所有目標，至少要先花 overallNearestDistance 吃掉第一隻。
+		// 剩下的目標，假設每隻至少要多花 2 步 (己方走過去 1 步 + 敵方可能逃跑或位置轉換)。
 		overallNearestDistance += (bitCount(existP | existEB) - 1) * 2;
+
+		// 回傳兩者中的最大值，這個值一定非常樂觀 (Underestimation)，非常適合用來做 A* 或 Alpha-Beta 的安全剪枝
 		return max(overallNearestDistance, farestToOppDistance);
 	}
 
-	//デバッグ用
+	// 終端機除錯用的印出盤面函式 (將 64-bit 整數轉換為 6x6 視覺化字元)
 	void printBoard() {
+		// 從左上角 (y=0, x=0) 印到右下角 (y=5, x=5)
 		for (int y = 0; y < 6; y++) {
 			for (int x = 0; x < 6; x++) {
-				int id = y * 6 + x;
+				int id = y * 6 + x;  // 格子 ID (0 ~ 35)
+
 				if ((existR >> id) & 1) cout << "R";
 				else if ((existB >> id) & 1) cout << "B";
 				else if ((existP >> id) & 1) cout << "P";
