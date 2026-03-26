@@ -144,6 +144,7 @@
     <ClInclude Include="CN.h" />
     <ClInclude Include="ExampleSolution.h" />
     <ClInclude Include="HashTable.h" />
+    <ClInclude Include="CsvToJson.h" />
     <ClInclude Include="IncludeLib.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Random.h" />
@@ -151,7 +152,11 @@
     <ClInclude Include="Search.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CsvToJson.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

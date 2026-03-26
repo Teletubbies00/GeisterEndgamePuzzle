@@ -1,6 +1,6 @@
 ﻿#include "RandomGeneration.h"
 #include "ExampleSolution.h"
-
+#include <direct.h>
 std::mt19937_64 IntRandom::mt64;
 
 int main(int argc, char* argv[]) {
@@ -14,6 +14,9 @@ int main(int argc, char* argv[]) {
         return 0;
     #endif // 0
 
+    char buff[256];
+    _getcwd(buff, 256);
+    std::cout << "目前程式輸出的路徑在: " << buff << std::endl;
 
 
 

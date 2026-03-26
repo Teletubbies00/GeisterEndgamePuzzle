@@ -38,10 +38,19 @@
     <ClInclude Include="ExampleSolution.h">
       <Filter>header</Filter>
     </ClInclude>
+    <ClInclude Include="CsvToJson.h">
+      <Filter>header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="CsvToJson.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.csv" />
   </ItemGroup>
 </Project>
