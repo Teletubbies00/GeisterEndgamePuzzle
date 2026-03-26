@@ -53,4 +53,7 @@
   <ItemGroup>
     <None Include="test.csv" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
 </Project>

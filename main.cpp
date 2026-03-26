@@ -1,23 +1,27 @@
 ﻿#include "RandomGeneration.h"
 #include "ExampleSolution.h"
+#include "CsvToJson.h"
 #include <direct.h>
+#include <cpr/cpr.h>
 std::mt19937_64 IntRandom::mt64;
+
+// 處理資料
+#define COMMUNICATE_WITH_WEBSITE
+
 
 int main(int argc, char* argv[]) {
     // -------------------------------//
     //            新增功能             //
     // -------------------------------//
     //       傳輸Json給網站功能
-    #if COMMUNICATE_WITH_WEBSITE
-        
-        
+    #ifdef COMMUNICATE_WITH_WEBSITE
+        Data::convertCsvToJson("test.csv", "result.json");
         return 0;
     #endif // 0
 
-    char buff[256];
-    _getcwd(buff, 256);
-    std::cout << "目前程式輸出的路徑在: " << buff << std::endl;
-
+    //char buff[256];
+    //_getcwd(buff, 256);
+    //std::cout << "目前程式輸出的路徑在: " << buff << std::endl;
 
 
     initializeManhattanDistance();

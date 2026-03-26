@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Geister-Endgame-Puzzle/build/_deps/libpsl_src-subbuild/CMakeFiles/libpsl_src-populate"
+		},
+		{
+			"file" : "C:/Geister-Endgame-Puzzle/build/_deps/libpsl_src-subbuild/CMakeFiles/b80fbbf31cdbda2053f4c12c0d147b90/libpsl_src-populate.rule"
+		},
+		{
+			"file" : "C:/Geister-Endgame-Puzzle/build/_deps/libpsl_src-subbuild/CMakeFiles/473b9e70eb9359d194f34b710f080c24/libpsl_src-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Geister-Endgame-Puzzle/build/_deps/libpsl_src-subbuild/CMakeFiles/2cde6b0808984558ef6e9115403e5ebf/libpsl_src-populate-build.rule"
+		},
+		{
+			"file" : "C:/Geister-Endgame-Puzzle/build/_deps/libpsl_src-subbuild/CMakeFiles/2cde6b0808984558ef6e9115403e5ebf/libpsl_src-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Geister-Endgame-Puzzle/build/_deps/libpsl_src-subbuild/CMakeFiles/2cde6b0808984558ef6e9115403e5ebf/libpsl_src-populate-download.rule"
+		},
+		{
+			"file" : "C:/Geister-Endgame-Puzzle/build/_deps/libpsl_src-subbuild/CMakeFiles/2cde6b0808984558ef6e9115403e5ebf/libpsl_src-populate-install.rule"
+		},
+		{
+			"file" : "C:/Geister-Endgame-Puzzle/build/_deps/libpsl_src-subbuild/CMakeFiles/2cde6b0808984558ef6e9115403e5ebf/libpsl_src-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Geister-Endgame-Puzzle/build/_deps/libpsl_src-subbuild/CMakeFiles/2cde6b0808984558ef6e9115403e5ebf/libpsl_src-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Geister-Endgame-Puzzle/build/_deps/libpsl_src-subbuild/CMakeFiles/2cde6b0808984558ef6e9115403e5ebf/libpsl_src-populate-test.rule"
+		},
+		{
+			"file" : "C:/Geister-Endgame-Puzzle/build/_deps/libpsl_src-subbuild/CMakeFiles/2cde6b0808984558ef6e9115403e5ebf/libpsl_src-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"libpsl_src-populate"
+		],
+		"name" : "libpsl_src-populate"
+	}
+}
