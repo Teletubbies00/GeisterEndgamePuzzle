@@ -43,3 +43,9 @@ inline int changeDir(const char* dirName) {
 	return chdir(dirName);
 #endif
 }
+
+
+// 給網路傳輸用的
+#define WIN32_LEAN_AND_MEAN
+#include "httplib.h"
+#pragma comment(lib, "ws2_32.lib")

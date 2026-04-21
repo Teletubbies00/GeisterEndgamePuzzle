@@ -7,16 +7,18 @@ using namespace std;
 
 // viewer_and_generated_puzzles\allprob
 namespace Data {
+	
 	// 處理csv檔內容為題目、解法(解法可能包含題目還沒決定)
-	void convertCsvToJson(const string& csvPath, const string& jsonPath) {
+	ordered_json convertCsvToJson(const string& csvPath, const string& jsonPath) {
+		ordered_json allPuzzles;
 		ifstream file(csvPath);
 		if (!file.is_open()) {
 			cerr << "csvPath is not exist";
-			return;
+			return NULL;
 		}
 
 		string puzzle;
-		ordered_json allPuzzles; // question 可以在answer前面 看的舒服
+		 
 
 		while (getline(file, puzzle)) {
 			if (puzzle == "") {
@@ -48,6 +50,8 @@ namespace Data {
 		else {
 			cerr << "Error: Can't create json file" << endl;
 		}
+
+		return allPuzzles;
 	}
 }
 

@@ -152,10 +152,12 @@
     <ClInclude Include="Search.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="answerGenerator.cpp" />
     <ClCompile Include="CsvToJson.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="questions.csv" />
     <None Include="test.csv" />
   </ItemGroup>
   <ItemGroup>

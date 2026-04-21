@@ -151,6 +151,67 @@ public:
 		return 0;
 	}
 
+	// 新增 為了解決剪枝 會導致答案缺失 
+	void appendMissingEscapeStep(string& solution_action, const string& last_board, int& move_id, int actionNum) {
+		string current_board = last_board;
+		bool first_move = true; // 避免重複輸入1.
+		while (move_id < actionNum) {
+			// 找出我方藍鬼(B)的位置
+			int b_pos = -1;
+			for (int k = 0; k < 36; k++) {
+				if (current_board[k] == 'B') { b_pos = k; break; }
+			}
+
+			if (b_pos == -1) break; // 防呆：沒藍鬼了
+
+			char src_x = char(b_pos % 6 + 'a');
+			char src_y = char((6 - b_pos / 6) + '0');
+
+			// --- 邏輯判斷：這一步該做什麼？ ---
+			if (move_id % 2 != 0) {
+				// 輪到我方 (奇數步)：一定是往出口衝
+				if (!first_move) {
+					solution_action += (to_string(move_id) + ".");
+				}
+				else {
+					first_move = false;
+				}
+				if (b_pos == 0) { // 在 a6
+					solution_action += " B a6 left   ";
+				}
+				else if (b_pos == 5) { // 在 f6
+					solution_action += " B f6 right   ";
+				}
+				else {
+					// 沒到角落，補一個往上的動作
+					solution_action += (" B " + src_x + src_y); solution_action += " up   ";
+				}
+			}
+			else {
+				// 輪到敵方 (偶數步)：AI 剪枝了，我們幫敵方補一個不影響勝負的動作
+				// 隨便找一個敵方棋子 (b, r, u) 補一個不痛不癢的動作給網站解析
+				int enemy_pos = -1;
+				char enemy_p = 'b';
+				for (int k = 35; k >= 0; k--) { // 從後面找，通常敵人在下方
+					if (current_board[k] == 'b' || current_board[k] == 'r' || current_board[k] == 'u') {
+						enemy_pos = k;
+						enemy_p = current_board[k];
+						break;
+					}
+				}
+
+				if (enemy_pos != -1) {
+					char ex = char(enemy_pos % 6 + 'a');
+					char ey = char((6 - enemy_pos / 6) + '0');
+					// 這裡有錯誤 需要找valid步法
+					solution_action += (to_string(move_id) + ". " + enemy_p + " " + ex + ey + " down   ");
+				}
+			}
+			move_id++;
+		}
+	}
+	
+	
 	// 將找到的必勝路徑，轉換成人類可讀的連續盤面或操作步驟 (例如 "1. B a6 left")
 	string returnSequenceBoard(int actionNum) {
 		string board_sequence;
@@ -167,7 +228,7 @@ public:
 			_n = new Node;
 			*_n = *vecNode[answerID[i]];
 			for (int grid_id = 0; grid_id < 36; grid_id += 6) {
-				if (needReadableAns) { board_sequence.append(to_string(6 - grid_id / 6) + " "); }
+				if (needReadableAns) { board_sequence.append(to_string(6 - grid_id / 6) + " ");}
 				board_sequence.append(_n->bb.returnString().substr(grid_id, 6));
 				if (needReadableAns) { board_sequence.append("\n"); }
 			}
@@ -218,13 +279,17 @@ public:
 			}
 			delete _n;
 		}
-		// 處理逃脫特殊邏輯
+		// 處理逃脫特殊邏輯 
 		if (needReadableAns && actionNum % 2 == 0) {
 			solution_action += (to_string(move_id) + ". B");
 			if (previous_board[0] == 'B') {
 				solution_action += " a6 left\n";
 			} else if (previous_board[5] == 'B') {
 				solution_action += " f6 right\n";
+			}
+			else // 新增 為了解決剪枝答案缺失 
+			{
+				appendMissingEscapeStep(solution_action, previous_board, move_id, actionNum + 1); // actionNum 加一因為沒有算最後一步
 			}
 		}
 		return board_sequence + (needReadableAns ? solution_action : "");

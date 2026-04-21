@@ -10,7 +10,7 @@ string makeNormalBoard(string board, int myBnum, int myRnum, int eBnum, int eRnu
 	for (int i = 0; i < myBnum; i++) {
 		do r = IntRandom::get_rand_range(0, 35); // edit: 把從1開始改為0，更一致
 		while (board[r] != '.' || r == 0 || r == 5);
-		board[r] = 'B';
+		board[r] = 'B';  
 	}
 	for (int i = 0; i < myRnum; i++) {
 		do r = IntRandom::get_rand_range(0, 35);
@@ -365,3 +365,4 @@ void RandomGeneration(const vector<string>& argvVec) {
 		OutputCount(argvVec[1], "Both", myBnum, myRnum, eBnum, eRnum, minAction, maxDepth, bothCount, trialNum, timeS, sumCalCount, sumTime);
 	}
 }
+
