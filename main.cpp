@@ -13,6 +13,7 @@ int main(int argc, char* argv[]) {
         
         return 0;
     #endif // 0
+<<<<<<< Updated upstream
 
     char buff[256];
     _getcwd(buff, 256);
@@ -20,6 +21,15 @@ int main(int argc, char* argv[]) {
 
 
 
+=======
+        if (argc >= 2 && argv[1] == string("SolveCsvPuzzle")) {
+        string inputCsv = "questions.csv";  // 你的題目檔名
+        string outputCsv = "answers.csv";   // 你想要的輸出檔名
+        string mode = "n";                  // normal 模式
+        SolveFromCSV(inputCsv, outputCsv, mode);
+    }
+    //return 0;
+>>>>>>> Stashed changes
     initializeManhattanDistance();
 
     vector<string> argvVec;
