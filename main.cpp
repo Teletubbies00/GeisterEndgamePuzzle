@@ -8,6 +8,8 @@
 #pragma comment(lib, "ws2_32.lib")
 std::mt19937_64 IntRandom::mt64;
 
+#include"answerGenerator.h"
+using namespace std;
 // 處理資料
 //#define COMMUNICATE_WITH_WEBSITE
 

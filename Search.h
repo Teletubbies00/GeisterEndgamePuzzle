@@ -17,10 +17,10 @@ class Search {
 	int maxDepth;
 
 	// 雜湊表 (Transposition Table)，分別記錄 Player (己方) 與 Enemy (敵方) 的盤面狀態以避免重複計算
-	HashMap hashP;
-	HashMap hashE;
+	Hashmap hashP;
+	Hashmap hashE;
 
-	string mode;
+	std::string mode;
 
 	unsigned int calPnDnCount = 0;
 
@@ -37,16 +37,16 @@ class Search {
 	bool dnend = false;
 
 	// 記憶體池 (Memory Pool)，預先保留空間以避免搜尋過程中頻繁 new/delete 造成效能瓶頸
-	vector<Node*> vecNode;
+	std::vector<Node*> vecNode;
 
 	CN<int> maxrootpn;
 	CN<int> maxrootdn;
 
 public:
-	string answerBoard;
-	string subMode;
+	std::string answerBoard;
+	std::string subMode;
 
-	Search(string mode, string subMode) {	//ゲームが始まる前の処理
+	Search(std::string mode, std::string subMode) {	//ゲームが始まる前の処理
 		// 遊戲開始前的初始化設定
 		this->mode = mode;
 		this->subMode = subMode;
@@ -81,7 +81,7 @@ public:
 	}
 
 	// 外部呼叫的 AI 思考入口點
-	int think(string board, int eB, int maxDepth, int minDepth=0) {
+	int think(std::string board, int eB, int maxDepth, int minDepth=0) {
 		this->maxDepth = maxDepth;
 		BitBoard bb;
 		bb.toBitBoard(board);
@@ -98,7 +98,7 @@ public:
 
 		// 採用反覆運算深化 (Iterative Deepening)，逐步增加搜尋深度
 		while (i <= maxDepth) {
-			//cout << "Depth " << i << endl;
+			//std::cout << "Depth " << i << std::endl;
 			lastCalCount = 0;
 			// 每次加深深度時清空雜湊表與重置節點樹
 			hashP.clear();
@@ -138,10 +138,10 @@ public:
 
 			// 檢查記憶體或計算量是否達到上限
 			if (overFlag == true) {
-				cout << mode << subMode << ", " << bitCount(bb.existB) << bitCount(bb.existR)
+				std::cout << mode << subMode << ", " << bitCount(bb.existB) << bitCount(bb.existR)
 					<< eB << (bitCount(bb.existP | bb.existEB | bb.existER) - eB)
 					<< ", " << board
-					<< ": over" << endl;
+					<< ": over" << std::endl;
 				overFlag = false;
 				break;
 			}
@@ -152,8 +152,8 @@ public:
 	}
 
 	// 新增 為了解決剪枝 會導致答案缺失 
-	void appendMissingEscapeStep(string& solution_action, const string& last_board, int& move_id, int actionNum) {
-		string current_board = last_board;
+	void appendMissingEscapeStep(std::string& solution_action, const std::string& last_board, int& move_id, int actionNum) {
+		std::string current_board = last_board;
 		bool first_move = true; // 避免重複輸入1.
 		while (move_id < actionNum) {
 			// 找出我方藍鬼(B)的位置
@@ -171,7 +171,7 @@ public:
 			if (move_id % 2 != 0) {
 				// 輪到我方 (奇數步)：一定是往出口衝
 				if (!first_move) {
-					solution_action += (to_string(move_id) + ".");
+					solution_action += (std::to_string(move_id) + ".");
 				}
 				else {
 					first_move = false;
@@ -204,7 +204,7 @@ public:
 					char ex = char(enemy_pos % 6 + 'a');
 					char ey = char((6 - enemy_pos / 6) + '0');
 					// 這裡有錯誤 需要找valid步法
-					solution_action += (to_string(move_id) + ". " + enemy_p + " " + ex + ey + " down   ");
+					solution_action += (std::to_string(move_id) + ". " + enemy_p + " " + ex + ey + " down   ");
 				}
 			}
 			move_id++;
@@ -213,10 +213,10 @@ public:
 	
 	
 	// 將找到的必勝路徑，轉換成人類可讀的連續盤面或操作步驟 (例如 "1. B a6 left")
-	string returnSequenceBoard(int actionNum) {
-		string board_sequence;
-		string solution_action;
-		string previous_board = vecNode[1]->bb.returnString();
+	std::string returnSequenceBoard(int actionNum) {
+		std::string board_sequence;
+		std::string solution_action;
+		std::string previous_board = vecNode[1]->bb.returnstring();
 		int move_id = 1;
 
 		// 找出通往勝利的節點 ID 序列，存入 answerID 陣列
@@ -228,14 +228,14 @@ public:
 			_n = new Node;
 			*_n = *vecNode[answerID[i]];
 			for (int grid_id = 0; grid_id < 36; grid_id += 6) {
-				if (needReadableAns) { board_sequence.append(to_string(6 - grid_id / 6) + " ");}
-				board_sequence.append(_n->bb.returnString().substr(grid_id, 6));
+				if (needReadableAns) { board_sequence.append(std::to_string(6 - grid_id / 6) + " ");}
+				board_sequence.append(_n->bb.returnstring().substr(grid_id, 6));
 				if (needReadableAns) { board_sequence.append("\n"); }
 			}
 			if (needReadableAns) { board_sequence.append("  abcdef\n"); }
 			board_sequence.append("\n");
 			if (needReadableAns) {
-				string current_board = _n->bb.returnString();
+				std::string current_board = _n->bb.returnstring();
 				int src_id = 36;
 				int dst_id = 36;
 				char moved_piece;
@@ -266,14 +266,14 @@ public:
 				}
 				char src_x = char(src_id % 6 + 'a');
 				char src_y = char((6 - src_id / 6) + '0');
-				string direction;
+				std::string direction;
 				if (dst_id - src_id == -6) { direction = "up"; }
 				else if (dst_id - src_id == 6) { direction = "down"; }
 				else if (dst_id - src_id == -1) { direction = "left"; }
 				else if (dst_id - src_id == 1) { direction = "right"; }
 				else { direction = "ERROR"; }
-				solution_action += (to_string(move_id) + ". " + string(1, moved_piece));
-				solution_action += (" " + string(1, src_x) + string(1, src_y) + " " + direction + "\n");
+				solution_action += (std::to_string(move_id) + ". " + std::string(1, moved_piece));
+				solution_action += (" " + std::string(1, src_x) + std::string(1, src_y) + " " + direction + "\n");
 				previous_board = current_board;
 				move_id++;
 			}
@@ -281,7 +281,7 @@ public:
 		}
 		// 處理逃脫特殊邏輯 
 		if (needReadableAns && actionNum % 2 == 0) {
-			solution_action += (to_string(move_id) + ". B");
+			solution_action += (std::to_string(move_id) + ". B");
 			if (previous_board[0] == 'B') {
 				solution_action += " a6 left\n";
 			} else if (previous_board[5] == 'B') {
@@ -316,9 +316,9 @@ private:
 			answerID[a] = 0;
 		}
 
-		//cout << "searchStart" << endl;
+		//std::cout << "searchStart" << std::endl;
 		CalDepthToGoal(1, 0, 0, actionNum);
-		//cout << "selectStart" << endl;
+		//std::cout << "selectStart" << std::endl;
 
 		while (1) {
 			_depthToGoalAnd = 100;
@@ -341,7 +341,7 @@ private:
 						Search* s;
 						s = new Search(mode, subMode);
 						bool is_skip =
-							(s->think(nChild.bb.returnString(), enemyBlue, nChild.depthToGoal - 1) != 0);
+							(s->think(nChild.bb.returnstring(), enemyBlue, nChild.depthToGoal - 1) != 0);
 						delete s;
 						if (is_skip) { continue; }
 						_depthToGoalOr = nChild.depthToGoal;

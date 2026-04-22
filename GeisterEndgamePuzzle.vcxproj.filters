@@ -41,6 +41,9 @@
     <ClInclude Include="CsvToJson.h">
       <Filter>header</Filter>
     </ClInclude>
+    <ClInclude Include="answerGenerator.h">
+      <Filter>header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

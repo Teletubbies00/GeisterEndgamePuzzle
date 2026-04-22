@@ -54,8 +54,8 @@ struct Node {
 	}
 };
 
-// 根據傳入的合法步 (from, to)，生成這個節點的所有下一步，並記錄在 childID 中。
-bool makeChild(HashMap& map, Node* n, int from[], int to[], int moveNum, int maxDepth, vector<Node*>& vecNode) {
+// 根據傳入的合法步 (from, to)，生成這個節點的所有下一步，並記錄在 childID 中。 // 增加inline
+inline bool makeChild(Hashmap& map, Node* n, int from[], int to[], int moveNum, int maxDepth, std::vector<Node*>& vecNode) {
 
 	// 只有在還沒展開過的情況下才需要生成
 	if (n->expanded == false) {
@@ -75,7 +75,7 @@ bool makeChild(HashMap& map, Node* n, int from[], int to[], int moveNum, int max
 				// 直接把那個已經存在節點的 ID 抄過來當作自己的子節點
 				n->childID[i] = cnp->id;
 				if (n->childID[i] == -1) {
-					cout << "error" << endl;
+					std::cout << "error" << std::endl;
 				}
 			}
 			else {
@@ -109,8 +109,8 @@ bool makeChild(HashMap& map, Node* n, int from[], int to[], int moveNum, int max
 }
 
 
-// 記憶體釋放
-void releaseVec(vector<Node*>& vecNode) {
+// 記憶體釋放// 增加inline
+inline void releaseVec(std::vector<Node*>& vecNode) {
 
 	for (int i = 0; i < vecNode.size(); i++) {
 		if (vecNode[i] != NULL) {
