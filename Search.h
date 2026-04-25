@@ -310,8 +310,7 @@ private:
 		int turn = 0;
 		int id = 1;
 		int depth = 0;
-		int _depthToGoalAnd;
-		int _depthToGoalOr;
+
 		for (int a = 0; a < 50; a++) {
 			answerID[a] = 0;
 		}
@@ -321,8 +320,8 @@ private:
 		//std::cout << "selectStart" << std::endl;
 
 		while (1) {
-			_depthToGoalAnd = 100;
-			_depthToGoalOr = -1;
+			int _depthToGoalAnd = 100;
+			int _depthToGoalOr = -1;
 
 			Node* n;
 			n = new Node;
@@ -330,7 +329,9 @@ private:
 			for (int i = 0; i < 32; i++) {
 				if (n->childID[i] == 0) break;
 				Node nChild = *vecNode[n->childID[i]];
+
 				if (nChild.bb.existR == 0ll) { continue; }
+
 				if (nChild.dn.isinf() == true) {
 					if (turn == 0 && nChild.depthToGoal < _depthToGoalAnd) {
 						_depthToGoalAnd = nChild.depthToGoal;
@@ -352,13 +353,14 @@ private:
 			}
 			delete n;
 			if (answerID[depth] == 0) break;
+
 			depth += 1;
 			turn = 1 - turn;
 		}
 	}
 
 
-	// 遞迴計算每個節點到達成目標 (詰み/獲勝) 的步數 (Minimax 邏輯)
+	// 遞迴計算每個節點到達成目標 (獲勝) 的步數 (Minimax 邏輯)
 	// 用於輔助 SearchAnswer 找出最短贏法，而不是無意義的繞圈子
 	void CalDepthToGoal(int id, int depth, int turn, int actionNum) {
 		int _depthToGoal;
