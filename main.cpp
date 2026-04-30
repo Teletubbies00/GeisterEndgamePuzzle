@@ -2,7 +2,7 @@
 
 #include "RandomGeneration.h"
 #include "ExampleSolution.h"
-#include "CsvToJson.h"
+#include "CsvParser.h"
 #include <direct.h>
 #include "httplib.h"
 #pragma comment(lib, "ws2_32.lib")
@@ -56,7 +56,7 @@ int main(int argc, char* argv[]) {
         string inputCsv = "questions.csv";  // 你的題目檔名
         string outputCsv = "answers.csv";   // 你想要的輸出檔名
         string mode = "n";                  // normal 模式
-        SolveFromCSV(inputCsv, outputCsv, mode);
+        solveFromCSV(inputCsv, outputCsv, mode);
     }
     return 0;
     initializeManhattanDistance();

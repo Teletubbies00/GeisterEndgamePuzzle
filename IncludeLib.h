@@ -74,5 +74,3 @@ inline int changeDir(const char* dirName) {
     return chdir(dirName);
 #endif
 }
-
-// 已經刪除 #include "answerGenerator.h" 避免循環依賴

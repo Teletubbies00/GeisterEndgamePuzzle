@@ -45,6 +45,7 @@ class Search {
 public:
 	std::string answerBoard;
 	std::string subMode;
+	bool onlyWantSteps = false;
 
 	Search(std::string mode, std::string subMode) {	//ゲームが始まる前の処理
 		// 遊戲開始前的初始化設定
@@ -79,6 +80,7 @@ public:
 			}
 		}
 	}
+
 
 	// 外部呼叫的 AI 思考入口點
 	int think(std::string board, int eB, int maxDepth, int minDepth=0) {
@@ -151,60 +153,69 @@ public:
 		return 0;
 	}
 
-	// 新增 為了解決剪枝 會導致答案缺失 
+
 	void appendMissingEscapeStep(std::string& solution_action, const std::string& last_board, int& move_id, int actionNum) {
 		std::string current_board = last_board;
-		bool first_move = true; // 避免重複輸入1.
-		while (move_id < actionNum) {
-			// 找出我方藍鬼(B)的位置
-			int b_pos = -1;
-			for (int k = 0; k < 36; k++) {
-				if (current_board[k] == 'B') { b_pos = k; break; }
-			}
 
-			if (b_pos == -1) break; // 防呆：沒藍鬼了
+		BitBoard bb;
+		bb.toBitBoard(current_board);
 
-			char src_x = char(b_pos % 6 + 'a');
-			char src_y = char((6 - b_pos / 6) + '0');
+		while (move_id <= actionNum) {  // <= 確保最後一步逃脫也會被執行
 
-			// --- 邏輯判斷：這一步該做什麼？ ---
 			if (move_id % 2 != 0) {
-				// 輪到我方 (奇數步)：一定是往出口衝
-				if (!first_move) {
-					solution_action += (std::to_string(move_id) + ".");
+				// 己方回合：找 B 的位置然後逃
+				int b_pos = -1;
+				for (int k = 0; k < 36; k++) {
+					if (current_board[k] == 'B') { b_pos = k; break; }
+				}
+				if (b_pos == -1) break;
+
+				solution_action += std::to_string(move_id) + ". ";
+
+				if (b_pos == 0) {
+					solution_action += "B a6 left   ";
+				}
+				else if (b_pos == 5) {
+					solution_action += "B f6 right   ";
 				}
 				else {
-					first_move = false;
+					// 還沒到出口，往上走
+					char src_x = char(b_pos % 6 + 'a');
+					char src_y = char((6 - b_pos / 6) + '0');
+					solution_action += "B " + std::string(1, src_x) + std::string(1, src_y) + " up   ";
+
+					// 更新盤面
+					current_board[b_pos - 6] = 'B';
+					current_board[b_pos] = '.';
+					bb.toBitBoard(current_board);
 				}
-				if (b_pos == 0) { // 在 a6
-					solution_action += " B a6 left   ";
-				}
-				else if (b_pos == 5) { // 在 f6
-					solution_action += " B f6 right   ";
-				}
-				else {
-					// 沒到角落，補一個往上的動作
-					solution_action += (" B " + src_x + src_y); solution_action += " up   ";
-				}
+
 			}
 			else {
-				// 輪到敵方 (偶數步)：AI 剪枝了，我們幫敵方補一個不影響勝負的動作
-				// 隨便找一個敵方棋子 (b, r, u) 補一個不痛不癢的動作給網站解析
-				int enemy_pos = -1;
-				char enemy_p = 'b';
-				for (int k = 35; k >= 0; k--) { // 從後面找，通常敵人在下方
-					if (current_board[k] == 'b' || current_board[k] == 'r' || current_board[k] == 'u') {
-						enemy_pos = k;
-						enemy_p = current_board[k];
-						break;
-					}
-				}
+				// 敵方回合：隨便走一個合法步
+				int from[32], to[32];
+				int moveNum = bb.makeMoves(1, kiki, from, to);
 
-				if (enemy_pos != -1) {
-					char ex = char(enemy_pos % 6 + 'a');
-					char ey = char((6 - enemy_pos / 6) + '0');
-					// 這裡有錯誤 需要找valid步法
-					solution_action += (std::to_string(move_id) + ". " + enemy_p + " " + ex + ey + " down   ");
+				if (moveNum > 0) {
+					int src = from[0];
+					int dst = to[0];
+
+					char enemy_p = current_board[src];
+					char ex = char(src % 6 + 'a');
+					char ey = char((6 - src / 6) + '0');
+
+					std::string direction;
+					if (dst - src == -6) direction = "up";
+					else if (dst - src == 6) direction = "down";
+					else if (dst - src == -1) direction = "left";
+					else if (dst - src == 1) direction = "right";
+
+					solution_action += std::to_string(move_id) + ". "
+						+ std::string(1, enemy_p) + " " + ex + ey + " " + direction + "   ";
+
+					current_board[dst] = current_board[src];
+					current_board[src] = '.';
+					bb.toBitBoard(current_board);
 				}
 			}
 			move_id++;
@@ -226,13 +237,17 @@ public:
 			if (answerID[i] == 0) break;
 			Node* _n;
 			_n = new Node;
-			*_n = *vecNode[answerID[i]];
-			for (int grid_id = 0; grid_id < 36; grid_id += 6) {
-				if (needReadableAns) { board_sequence.append(std::to_string(6 - grid_id / 6) + " ");}
-				board_sequence.append(_n->bb.returnstring().substr(grid_id, 6));
-				if (needReadableAns) { board_sequence.append("\n"); }
+			*_n = *vecNode[answerID[i]]; 
+
+			if (!onlyWantSteps) {
+				for (int grid_id = 0; grid_id < 36; grid_id += 6) {
+					if (needReadableAns) { board_sequence.append(std::to_string(6 - grid_id / 6) + " "); }
+					board_sequence.append(_n->bb.returnstring().substr(grid_id, 6));
+					if (needReadableAns) { board_sequence.append("\n"); }
+				}
+
+				if (needReadableAns) { board_sequence.append("  abcdef\n"); }
 			}
-			if (needReadableAns) { board_sequence.append("  abcdef\n"); }
 			board_sequence.append("\n");
 			if (needReadableAns) {
 				std::string current_board = _n->bb.returnstring();
@@ -273,7 +288,7 @@ public:
 				else if (dst_id - src_id == 1) { direction = "right"; }
 				else { direction = "ERROR"; }
 				solution_action += (std::to_string(move_id) + ". " + std::string(1, moved_piece));
-				solution_action += (" " + std::string(1, src_x) + std::string(1, src_y) + " " + direction + "\n");
+				solution_action += (" " + std::string(1, src_x) + std::string(1, src_y) + " " + direction + "   ");
 				previous_board = current_board;
 				move_id++;
 			}
@@ -281,11 +296,10 @@ public:
 		}
 		// 處理逃脫特殊邏輯 
 		if (needReadableAns && actionNum % 2 == 0) {
-			solution_action += (std::to_string(move_id) + ". B");
 			if (previous_board[0] == 'B') {
-				solution_action += " a6 left\n";
+				solution_action += (std::to_string(move_id) + ". B a6 left   ");
 			} else if (previous_board[5] == 'B') {
-				solution_action += " f6 right\n";
+				solution_action += (std::to_string(move_id) + ". B f6 right   ");
 			}
 			else // 新增 為了解決剪枝答案缺失 
 			{
@@ -422,7 +436,7 @@ private:
 	}
 
 	// 計算根節點的證明數 (Proof Number)
-	// 概念：OR 節點 (己方) 的證明數 = 子節點證明數的最小值
+	// 概念： OR 節點 (己方) 的證明數 = 子節點證明數的最小值
 	//       AND 節點 (敵方) 的證明數 = 子節點證明數的總和
 	CN<int> calPn(unsigned int id, int depth, int maxdepth) {
 		CN<int> minimum;
@@ -457,7 +471,7 @@ private:
 	}
 
 	// 計算根節點的反證數 (Disproof Number)
-	// 概念：OR 節點 (己方) 的反證數 = 子節點反證數的總和 (必須所有選項都失敗才算失敗)
+	// 概念： OR 節點 (己方) 的反證數 = 子節點反證數的總和 (必須所有選項都失敗才算失敗)
 	//       AND 節點 (敵方) 的反證數 = 子節點反證數的最小值 (只要有一招防住就算防守成功)
 	CN<int> calDn(unsigned int id, int depth, int maxdepth) {
 		CN<int> minimum;
@@ -489,13 +503,13 @@ private:
 		else return sum;
 	}
 
-	// [ OR 節點計算 ] : 反證數 (DN) 取子節點 DN 的最小值 (只要有一步能贏，反證就最困難)
-	CN<int> DeltaMinOr(Node& n) {
+	// [ AND 節點計算 ] : 反證數 (DN) 取子節點 DN 的最小值 (對手只要找到一步能成功防禦，就能反證我們的攻擊)
+	CN<int> getMinChildDN(Node& n) {
 		CN<int> minimum;
 
 		for (int i = 0; i < 32; i++) {
 			if (n.childID[i] == 0) break;
-			if (vecNode[n.childID[i]] == NULL) {
+			if (vecNode[n.childID[i]] == NULL) {  // NULL 代表這是一個「不合法」或「已經確定玩家必敗」的無效節點
 				minimum = 0;
 			}
 			else {
@@ -505,13 +519,13 @@ private:
 		return minimum;
 	}
 
-	// [ AND 節點計算 ] : 證明數 (PN) 取子節點 PN 的最小值 (只要有一步能防禦，證明就最困難)
-	CN<int> DeltaMinAnd(Node& n) {
+	// [ OR 節點計算 ] : 證明數 (PN) 取子節點 PN 的最小值 (己方只要找到一步能贏，就能證明這個局面獲勝)
+	CN<int> getMinChildPN(Node& n) {
 		CN<int> minimum;
 
 		for (int i = 0; i < 32; i++) {
 			if (n.childID[i] == 0) break;
-			if (vecNode[n.childID[i]] == NULL) {}
+			if (vecNode[n.childID[i]] == NULL) {} // NULL 代表這是一個「不合法」或「已經確定玩家必敗」的無效節點
 			else {
 				minimum = min(vecNode[n.childID[i]]->pn, minimum);
 			}
@@ -519,8 +533,8 @@ private:
 		return minimum;
 	}
 
-	// [ OR 節點計算 ] : 證明數 (PN) 取所有子節點 PN 的總和 (必須所有子節點都證明失敗才算失敗)
-	CN<int> PhiSumOr(Node& n) {
+	// [ OR 節點計算 ] : 反證數 (DN) 取所有子節點 DN 的總和 (必須堵死己方所有的攻擊選項，才能反證這個局面必敗)
+	CN<int> getSumChildPN(Node& n) {
 		CN<int> sum(0);
 
 		for (int i = 0; i < 32; i++) {
@@ -536,7 +550,7 @@ private:
 	}
 
 	// [ AND 節點計算 ] : 反證數 (DN) 取所有子節點 DN 的總和 (必須所有防禦都被擊破才算獲勝)
-	CN<int> PhiSumAnd(Node& n) {
+	CN<int> getSumChildDN(Node& n) {
 		CN<int> sum(0);
 
 		for (int i = 0; i < 32; i++) {
@@ -549,7 +563,7 @@ private:
 		return sum;
 	}
 
-	// 選擇 OR 節點中最有希望的分支：尋找反證數 (DN) 最小的子節點
+	// 選擇 OR 節點中最有希望的分支：尋找反證數 (DN) 最小的子節點 (自己是AND節點)
 	int SelectChildOr(Node& n, CN<int>& pn, CN<int>& dn2) {
 		CN<int> dn1;
 		int best = 0;
@@ -581,7 +595,7 @@ private:
 		return best;
 	}
 
-	// 選擇 AND 節點中最有希望的分支：尋找證明數 (PN) 最小的子節點
+	// 選擇 AND 節點中最有希望的分支：尋找證明數 (PN) 最小的子節點 (自己是OR節點)
 	int SelectChildAnd(Node& n, CN<int>& dn, CN<int>& pn2) {
 		CN<int> pn1;
 		int best = 0;
@@ -628,45 +642,45 @@ private:
 
 		// 1. 終止條件判定 (檢查盤面勝負)
 		switch (n.bb.check(0, enemyBlue, subMode)) {
-		case 0:  // 判定為己方獲勝 (證明成功) -> PN=0, DN=無窮大
-			n.pn = 0;
-			n.dn.infinity();
-			pn = 0;
-			dn.infinity();
-			PutInHash(hashP, n.bb, n.depth, &n);
+			case 0:  // 判定為己方獲勝 (證明成功) -> PN=0, DN=無窮大
+				n.pn = 0;
+				n.dn.infinity();
+				pn = 0;
+				dn.infinity();
+				PutInHash(hashP, n.bb, n.depth, &n);
 
-			return;
-		case 1:  // 判定為敵方獲勝 (反證成功) -> PN=無窮大, DN=0
-			n.pn.infinity();
-			n.dn = 0;
-			pn.infinity();
-			dn = 0;
-			PutInHash(hashP, n.bb, n.depth, &n);
-			return;
-		case 2:  // 其他特殊勝利條件 -> 視同己方獲勝
-			n.pn = 0;
-			n.dn.infinity();
-			pn = 0;
-			dn.infinity();
-			PutInHash(hashP, n.bb, n.depth, &n);
-
-			return;
-		default:
-			// 剪枝邏輯 (Pruning)：如果判斷己方來不及逃脫或達成目標，提前視為失敗(反證成功)
-			int escapeMaxDepth = (maxdepth % 2 == 0) ? maxdepth : (maxdepth - 1);
-			bool isMoreThanMinEscape = ((n.bb.minEscapeAction() * 2) > (escapeMaxDepth - depth));
-			bool canPrune = ((mode == "n" && isMoreThanMinEscape)
-				|| (mode == "p" && isMoreThanMinEscape && ((n.bb.existER == 0)
-					|| (n.bb.minCaptureAction() > (maxdepth - depth)))));
-			if ((depth == maxdepth) || canPrune) {
+				return;
+			case 1:  // 判定為敵方獲勝 (反證成功) -> PN=無窮大, DN=0
 				n.pn.infinity();
 				n.dn = 0;
 				pn.infinity();
 				dn = 0;
 				PutInHash(hashP, n.bb, n.depth, &n);
 				return;
-			}
-			break;
+			case 2:  // 其他特殊勝利條件 -> 視同己方獲勝
+				n.pn = 0;
+				n.dn.infinity();
+				pn = 0;
+				dn.infinity();
+				PutInHash(hashP, n.bb, n.depth, &n);
+
+				return;
+			default:
+				// 剪枝邏輯 (Pruning)：如果判斷己方來不及逃脫或達成目標，提前視為失敗(反證成功)
+				int escapeMaxDepth = (maxdepth % 2 == 0) ? maxdepth : (maxdepth - 1);
+				bool isMoreThanMinEscape = ((n.bb.minEscapeAction() * 2) > (escapeMaxDepth - depth));
+				bool canPrune = ((mode == "n" && isMoreThanMinEscape)
+					|| (mode == "p" && isMoreThanMinEscape && ((n.bb.existER == 0)
+						|| (n.bb.minCaptureAction() > (maxdepth - depth)))));
+				if ((depth == maxdepth) || canPrune) {
+					n.pn.infinity();
+					n.dn = 0;
+					pn.infinity();
+					dn = 0;
+					PutInHash(hashP, n.bb, n.depth, &n);
+					return;
+				}
+				break;
 		}
 
 		// 2. 節點展開 (Node Expansion) - 如果該節點尚未展開，則生成所有合法的下一步
@@ -694,26 +708,28 @@ private:
 		// 3. 多重反覆運算深化迴圈
 		while (1) {
 			// OR 節點的當前評估值：PN 應為子節點 PN 最小值，DN 應為子節點 DN 總和
-			dmin = DeltaMinAnd(n);
-			psum = PhiSumAnd(n);
+			dmin = getMinChildPN(n);
+			psum = getSumChildDN(n);
 
 			// 如果子節點傳回來的評估值已超出當前函數所被允許的閾值 (pn, dn)，就提早 return 交回控制權
 			if (pn <= dmin || dn <= psum) {
-				pn = dmin;
+				// 如果真實難度 (dmin) 已經超過了上層給的容忍上限 (pn)...
+				// 代表這條路「比想像中難」，我不玩了！
+				pn = dmin;  // 把真實難度回報給上層
 				dn = psum;
 				n.setPnDn(dmin, psum);
 				PutInHash(hashP, n.bb, n.depth, &n);
 
 				return;
 			}
-			CN<int> _pn2;
-			int best = SelectChildAnd(n, _dn, _pn2);
+			CN<int> _pn2;  // 3. 挑選最優解與第二名
+			int best = SelectChildAnd(n, _dn, _pn2);  // 選出最好走的路，並打聽「第二好走的路難度是多少 (_pn2)」
 
-			Node* nextN = vecNode[n.childID[best]];
-			_dn = (dn - psum) + _dn;
-			_pn = min(pn, _pn2 + CN<int>(1));
+			Node* nextN = vecNode[n.childID[best]]; 
+			_dn = (dn - psum) + _dn;   // 4. 計算要發給下一層的「容忍度 (預算)」
+			_pn = min(pn, _pn2 + CN<int>(1));  // 【DF-PN 最著名的公式】
 
-			MIDAnd(*nextN, _pn, _dn, depth + 1, maxdepth, enemyBlue);
+			MIDAnd(*nextN, _pn, _dn, depth + 1, maxdepth, enemyBlue);  // 下一層
 
 			if (overFlag == true) {
 				return;
@@ -793,8 +809,8 @@ private:
 		// 3.多重反復深化
 		while (1) {
 			// AND 節點邏輯：PN 取總和，DN 取最小值
-			dmin = DeltaMinOr(n);
-			psum = PhiSumOr(n);
+			dmin = getMinChildDN(n);
+			psum = getSumChildPN(n);
 
 			if (dn <= dmin || pn <= psum) {
 				dn = dmin;

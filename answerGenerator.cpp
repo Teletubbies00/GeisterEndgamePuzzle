@@ -1,76 +1,55 @@
 #include<iostream>
 #include"answerGenerator.h"
-using namespace std;
 
 
-void SolveFromCSV(const string& inputCsvPath, const string& outputCsvPath, const string& mode) {
-    ifstream inFile(inputCsvPath);
-    if (!inFile.is_open()) {
-        cerr << "無法開啟輸入檔案: " << inputCsvPath << endl;
-        return;
-    }
 
-    ofstream outFile(outputCsvPath);
+void solveFromCSV(const std::string& inputCsvPath, const std::string& outputCsvPath, const std::string& mode) {
+
+    Data::PuzzlesLoader puzzles(inputCsvPath);
+    std::ofstream outFile(outputCsvPath);
     if (!outFile.is_open()) {
-        cerr << "無法建立輸出檔案: " << outputCsvPath << endl;
+        std::cerr << "無法建立輸出檔案: " << outputCsvPath << std::endl;
         return;
     }
 
-    //outFile << "Board,eBnum,MaxDepth,ActionNum,CalCount,MaxPn,MaxDn,Solution\n";
     outFile << "Board,Solution\n";
 
-
-    string line;
-    while (getline(inFile, line)) {
-        if (line.empty()) continue;
-
-        stringstream ss(line);
-        string boardStr, eBnumStr, maxDepthStr;
-
-        // CSV 格式：盤面,eBnum,maxDepth
-        getline(ss, boardStr, ',');
-        getline(ss, eBnumStr, ',');
-        getline(ss, maxDepthStr, ',');
-
-        int eBnum = stoi(eBnumStr);
-        int maxDepth = stoi(maxDepthStr);
-
-        // 呼叫你的 Search 引擎
+    for (const auto& puzzle : puzzles.puzzleSet) {
         Search search(mode, "n");
         search.setNeedAns(true);
+        search.setNeedReadableAns(true);
+        search.onlyWantSteps = true;
+        int actionNum = search.think(puzzle.board, puzzle.eBnum, puzzle.maxDepth);
 
-        int actionNum = search.think(boardStr, eBnum, maxDepth);
-
-        unsigned int calCount = search.returnCount();
-        auto maxpn = search.returnMaxPn();
-        auto maxdn = search.returnMaxDn();
-
-        string solutionSteps = "no solution";
+        std::string solutionSteps = "no solution";
         if (actionNum > 0) {
             solutionSteps = search.answerBoard;
+
+            // 移除換行符號，讓整筆 solution 變成單行
+            std::replace(solutionSteps.begin(), solutionSteps.end(), '\n', ' ');
+
+            // 去掉頭尾多餘空白
+            auto start = solutionSteps.find_first_not_of(' ');
+            auto end = solutionSteps.find_last_not_of(' ');
+            if (start != std::string::npos)
+                solutionSteps = solutionSteps.substr(start, end - start + 1);
         }
 
-        // 寫入 CSV，解答字串用雙引號包起來
-        //outFile << boardStr << ","
-        //    << eBnum << ","
-        //    << maxDepth << ","
-        //    << actionNum << ","
-        //    << calCount << ","
-        //    << maxpn << ","
-        //    << maxdn << ","
-        //    << "\"" << solutionSteps << "\"\n";
-        outFile << boardStr << ","
+        // 用引號包住，防止內容裡的逗號破壞 CSV 格式
+        outFile << "\"" << puzzle.board << "\","
             << "\"" << solutionSteps << "\"\n";
-        cout << solutionSteps << endl;
-        cout << "Board: " << boardStr << " | steps: " << actionNum << "\n";
+
+        std::cout << "Board: " << puzzle.board
+            << " | steps: " << actionNum << "\n";
     }
 
-    inFile.close();
     outFile.close();
-    cout << "All answers are saved in : " << outputCsvPath << endl;
+    std::cout << "All answers are saved in: " << outputCsvPath << std::endl;
 }
-//
-//
+
+
+
+
 //// 這是這個新檔案專屬的主程式
 //int main(int argc, char* argv[]) {
 //    // 預設參數，你可以改成讀取命令列參數
