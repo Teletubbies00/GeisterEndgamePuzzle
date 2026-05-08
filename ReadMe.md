@@ -138,4 +138,3 @@ You can find the GUI in the `viewer_and_generated_puzzles` folder.
   url = {https://www.sciencedirect.com/science/article/pii/S1875952124001046},
 }
 ```
-<!-- test  -->
