@@ -267,7 +267,7 @@ public:
 			int id = popLsb(b);
 
 			// 計算這個青鬼到左上角 (0) 和右上角 (5) 兩個脫出口的曼哈頓距離，取比較近的那個
-			int dist = min(manhattanDistance[id][0], manhattanDistance[id][5]);
+			int dist = std::min(manhattanDistance[id][0], manhattanDistance[id][5]);
 
 			// 更新目前盤面上所有青鬼中，距離脫出口最近的距離
 			if (minAction > dist) minAction = dist;
@@ -296,11 +296,11 @@ public:
 			while (b != 0) {
 				int id2 = popLsb(b);  // 抓出己方棋子
 				int dist = manhattanDistance[id1][id2];  // 查表取得曼哈頓距離
-				nearestToOppDistance = min(nearestToOppDistance, dist);
-				overallNearestDistance = min(overallNearestDistance, dist);
+				nearestToOppDistance = std::min(nearestToOppDistance, dist);
+				overallNearestDistance = std::min(overallNearestDistance, dist);
 			}
 			// 更新「最難被吃掉」的目標距離
-			farestToOppDistance = max(farestToOppDistance, nearestToOppDistance);
+			farestToOppDistance = std:: max(farestToOppDistance, nearestToOppDistance);
 		}
 		// 理論下限步數計算：
 		// 要吃掉所有目標，至少要先花 overallNearestDistance 吃掉第一隻。
@@ -308,7 +308,7 @@ public:
 		overallNearestDistance += (bitCount(existP | existEB) - 1) * 2;
 
 		// 回傳兩者中的最大值，這個值一定非常樂觀 (Underestimation)，非常適合用來做 A* 或 Alpha-Beta 的安全剪枝
-		return max(overallNearestDistance, farestToOppDistance);
+		return std::max(overallNearestDistance, farestToOppDistance);
 	}
 
 	// 終端機除錯用的印出盤面函式 (將 64-bit 整數轉換為 6x6 視覺化字元)

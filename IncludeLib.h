@@ -27,6 +27,9 @@
 #define WIN32_LEAN_AND_MEAN // 防止 Windows 標頭檔引入舊版 Winsock 造成衝突
 #endif
 
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
 #include <Windows.h>
 #include <direct.h>
 #include <intrin.h>

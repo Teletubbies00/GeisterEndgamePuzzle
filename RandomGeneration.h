@@ -4,7 +4,7 @@
 #include "Search.h"
 
 //用於「非公開模式（Normal）」。在 36 格的棋盤上，隨機放置我方的藍棋（B）、紅棋（R），並將敵方所有的棋子（無論紅藍）全部標記為未知的狀態（'u'）。
-std::string makeNormalBoard(std::string board, int myBnum, int myRnum, int eBnum, int eRnum) {
+inline std::string makeNormalBoard(std::string board, int myBnum, int myRnum, int eBnum, int eRnum) {
 	std::random_device rnd;
 	int r = 0;
 	for (int i = 0; i < myBnum; i++) {
@@ -27,7 +27,7 @@ std::string makeNormalBoard(std::string board, int myBnum, int myRnum, int eBnum
 }
 
 // 用於「部分公開模式（Partial）」。除了放置我方棋子外，還會根據傳入的參數，隨機揭露一定數量的敵方紅棋（'r'）與敵方藍棋（'b'），剩下的敵方棋子才標記為未知（'u'）
-std::string makePartBoard(std::string board, int myBnum, int myRnum, int eBnum, int eRnum, int openB, int openR) {
+inline std::string makePartBoard(std::string board, int myBnum, int myRnum, int eBnum, int eRnum, int openB, int openR) {
 	std::random_device rnd;
 	int r = 0;
 	for (int i = 0; i < myBnum; i++) {
@@ -60,7 +60,7 @@ std::string makePartBoard(std::string board, int myBnum, int myRnum, int eBnum, 
 }
 
 // 當使用者在命令列執行程式且參數給錯時，印出使用教學
-void HelpMessageRandGen(const std::string& prog_name)
+inline void HelpMessageRandGen(const std::string& prog_name)
 {
 	std::cout << "Usage: " << prog_name << " RandomGen" <<
 		" [mode] [#B] [#R] [#b] [#r] [min #actions] [max #depth] [#trails] [(random seed)]" << std::endl;
@@ -99,7 +99,7 @@ void HelpMessageRandGen(const std::string& prog_name)
 }
 
 // 負責將 AI 生成與解題的統計結果（包含解題步數分佈、花費時間、搜尋節點數等）寫入 .csv 檔案
-void OutputCount(const std::string& puzzleType, const std::string& countType,
+inline void OutputCount(const std::string& puzzleType, const std::string& countType,
 	int myBnum, int myRnum, int eBnum, int eRnum,
 	int minActionNum, int maxActionNum,
 	int count[20], int trialNum, double timeS,
@@ -129,8 +129,9 @@ void OutputCount(const std::string& puzzleType, const std::string& countType,
 	ofsResult.close();
 }
 
+
 // 整個隨機生成謎題（或稱盤面）的核心控制器
-void RandomGeneration(const std::vector<std::string>& argvVec) {
+inline void RandomGeneration(const std::vector<std::string>& argvVec) {
 	if (argvVec.size() != 9 && argvVec.size() != 10) { HelpMessageRandGen(argvVec[0]); }
 
 	std::string mode;
@@ -315,7 +316,7 @@ void RandomGeneration(const std::vector<std::string>& argvVec) {
 #else
 		ss << actionNum << " moves" << "\n";
 #endif
-		ss << "myBnum : " << myBnum << ", myRnum ; " << myRnum << ", enBnum : " << eBnum << ", enRnum : " << eRnum << ", maxDepth : " << maxDepth << "\n";
+		ss << "myBnum : " << myBnum << ", myRnum : " << myRnum << ", enBnum : " << eBnum << ", enRnum : " << eRnum << ", maxDepth : " << maxDepth << "\n";
 		ss << "calCount = " << calCount << "\n";
 		ss << "maxpn = " << maxpn << ", maxdn = " << maxdn << "\n";
 

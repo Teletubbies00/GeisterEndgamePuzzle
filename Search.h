@@ -449,9 +449,9 @@ private:
 				if (minimum <= maxrootpn) break; // 剪枝優化
 				if (vecNode[_n.childID[i]] == NULL) {}
 				else if (vecNode[_n.childID[i]]->expanded == true && depth < maxDepth) {
-					minimum = min(calPn(_n.childID[i], depth + 1, maxdepth), minimum);
+					minimum = std::min(calPn(_n.childID[i], depth + 1, maxdepth), minimum);
 				}
-				else minimum = min(vecNode[_n.childID[i]]->pn, minimum);
+				else minimum = std::min(vecNode[_n.childID[i]]->pn, minimum);
 			}
 			else {                               // AND 節點 (敵方回合) -> 求總和
 				if (sum.isinf() == true) break;  // 如果有無限大，總和就是無限大
@@ -486,9 +486,9 @@ private:
 				if (minimum <= maxrootdn) break;
 				if (vecNode[_n.childID[i]] == NULL) minimum = 0;
 				else if (vecNode[_n.childID[i]]->expanded == true && depth < maxdepth) {
-					minimum = min(calDn(_n.childID[i], depth + 1, maxdepth), minimum);
+					minimum = std::min(calDn(_n.childID[i], depth + 1, maxdepth), minimum);
 				}
-				else minimum = min(vecNode[_n.childID[i]]->dn, minimum);
+				else minimum = std::min(vecNode[_n.childID[i]]->dn, minimum);
 			}
 			else {                               // OR 節點 (己方回合) -> 求總和
 				if (sum.isinf() == true) break;
@@ -513,7 +513,7 @@ private:
 				minimum = 0;
 			}
 			else {
-				minimum = min(vecNode[n.childID[i]]->dn, minimum);
+				minimum = std::min(vecNode[n.childID[i]]->dn, minimum);
 			}
 		}
 		return minimum;
@@ -527,7 +527,7 @@ private:
 			if (n.childID[i] == 0) break;
 			if (vecNode[n.childID[i]] == NULL) {} // NULL 代表這是一個「不合法」或「已經確定玩家必敗」的無效節點
 			else {
-				minimum = min(vecNode[n.childID[i]]->pn, minimum);
+				minimum = std::min(vecNode[n.childID[i]]->pn, minimum);
 			}
 		}
 		return minimum;
@@ -727,7 +727,7 @@ private:
 
 			Node* nextN = vecNode[n.childID[best]]; 
 			_dn = (dn - psum) + _dn;   // 4. 計算要發給下一層的「容忍度 (預算)」
-			_pn = min(pn, _pn2 + CN<int>(1));  // 【DF-PN 最著名的公式】
+			_pn = std::min(pn, _pn2 + CN<int>(1));  // 【DF-PN 最著名的公式】
 
 			MIDAnd(*nextN, _pn, _dn, depth + 1, maxdepth, enemyBlue);  // 下一層
 
@@ -825,7 +825,7 @@ private:
 
 			Node* nextN = vecNode[n.childID[best]];
 			_pn = (pn - psum) + _pn;
-			_dn = min(dn, _dn2 + CN<int>(1));
+			_dn = std::min(dn, _dn2 + CN<int>(1));
 
 			MIDOr(*nextN, _pn, _dn, depth + 1, maxdepth, enemyBlue);
 
