@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Geister-Endgame-Puzzle\build\_deps\zlib-subbuild\CMakeFiles\9430f61650584033880a591b082df450\zlib-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Geister-Endgame-Puzzle\build\_deps\zlib-subbuild\CMakeFiles\9430f61650584033880a591b082df450\zlib-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Geister-Endgame-Puzzle\build\_deps\zlib-subbuild\CMakeFiles\9430f61650584033880a591b082df450\zlib-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Geister-Endgame-Puzzle\build\_deps\zlib-subbuild\CMakeFiles\9430f61650584033880a591b082df450\zlib-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Geister-Endgame-Puzzle\build\_deps\zlib-subbuild\CMakeFiles\9430f61650584033880a591b082df450\zlib-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Geister-Endgame-Puzzle\build\_deps\zlib-subbuild\CMakeFiles\9430f61650584033880a591b082df450\zlib-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Geister-Endgame-Puzzle\build\_deps\zlib-subbuild\CMakeFiles\9430f61650584033880a591b082df450\zlib-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Geister-Endgame-Puzzle\build\_deps\zlib-subbuild\CMakeFiles\9430f61650584033880a591b082df450\zlib-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Geister-Endgame-Puzzle\build\_deps\zlib-subbuild\CMakeFiles\6dd2bbfef5d50d4a6e7107479aebe5c2\zlib-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Geister-Endgame-Puzzle\build\_deps\zlib-subbuild\CMakeFiles\e75262ee712d302fc21116474b5265e8\zlib-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Geister-Endgame-Puzzle\build\_deps\zlib-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Geister-Endgame-Puzzle\build\_deps\zlib-subbuild\CMakeFiles\zlib-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{73E43DED-24D7-3930-98CF-999371358CDD}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

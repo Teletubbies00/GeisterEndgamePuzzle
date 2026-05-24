@@ -1,12 +1,12 @@
 ﻿#pragma once
 #include "IncludeLib.h"
 
-// 效能分析 (Profiling) 用的全域變數，用來統計查表/寫表的次數與花費時間
-unsigned int hashlooktime = 0;
-unsigned int hashlookcount = 0;
-unsigned int hashputtime = 0;
+// 效能分析 (Profiling) 用的全域變數，用來統計查表/寫表的次數與花費時間 // 增加inline
+inline unsigned int hashlooktime = 0;
+inline unsigned int hashlookcount = 0;
+inline unsigned int hashputtime = 0;
 
-long long mask = 1;  // 用於生成雜湊鍵值的遮罩 (Mask)，這裡設為 1，稍後會用 XOR (^) 運算稍微打亂位元
+inline long long mask = 1;  // 用於生成雜湊鍵值的遮罩 (Mask)，這裡設為 1，稍後會用 XOR (^) 運算稍微打亂位元
 
 struct Node;  // 前向宣告
 
@@ -51,7 +51,7 @@ struct HashTableKey {
 	bool operator!=(const HashTableKey& rhs) const;
 
 private:
-	friend ostream& operator<<(ostream& s, const HashTableKey& obj);
+	friend std::ostream& operator<<(std::ostream& s, const HashTableKey& obj);
 };
 
 /*
@@ -85,7 +85,7 @@ inline bool HashTableKey::operator!=(const HashTableKey& rhs) const {
 
 /**
  * 自訂雜湊函數 (Hash Function) 的實作
- * unordered_map 需要知道怎麼把 HashTableKey 轉成一個 size_t 數字
+ * unordered_std::map 需要知道怎麼把 HashTableKey 轉成一個 size_t 數字
  */
 struct HashTableKey::Hash {
 	typedef size_t result_type;
@@ -111,26 +111,26 @@ inline std::size_t HashTableKey::Hash::operator()(const HashTableKey& key) const
 //======================================
 
 /**
- * 定義 HashMap 型別：
- * 使用 C++ 標準庫的 unordered_map。
+ * 定義 Hashstd::map 型別：
+ * 使用 C++ 標準庫的 unordered_std::map。
  * 鍵 (Key) 是 HashTableKey，值 (Value) 是 Node* 指標，並套用我們剛剛自訂的雜湊函數。
  */
-typedef unordered_map<HashTableKey, Node*, HashTableKey::Hash> HashMap;
+typedef std::unordered_map<HashTableKey, Node*, HashTableKey::Hash> Hashmap;
 
 //======================================
 // Sample Code (查表與寫表操作)
 //======================================
 
 
-// 在雜湊表中尋找是否算過這個盤面
-Node* LookUpHash(HashMap& map, BitBoard& bb, int depth) {
+// 在雜湊表中尋找是否算過這個盤面 // 增加inline
+inline Node* LookUpHash(Hashmap& map, BitBoard& bb, int depth) {
 	hashlookcount += 1;
 	clock_t start = clock();
 
 	// 建立 Key。這裡用 ^ mask (XOR 1) 稍微翻轉了最低位元
 	HashTableKey key(bb.existB ^ mask, bb.existR ^ mask, bb.existP ^ mask, bb.existEB ^ mask, bb.existER ^ mask, depth);
 
-	// 在 map 中尋找這個 key
+	// 在 std::map 中尋找這個 key
 	auto itr = map.find(key);
 
 	if (itr != map.end()) {
@@ -138,7 +138,7 @@ Node* LookUpHash(HashMap& map, BitBoard& bb, int depth) {
 		clock_t end = clock();
 		hashlooktime += (end - start);
 		/*bb.printBoard();
-		cout << depth << endl;
+		std::cout << depth << std::endl;
 		system("PAUSE");*/
 		return (itr->second);  // 回傳存好的 Node 指標
 	}
@@ -150,15 +150,15 @@ Node* LookUpHash(HashMap& map, BitBoard& bb, int depth) {
 	}
 }
 
-// 將算好的盤面存入雜湊表
-void PutInHash(HashMap& map, BitBoard& bb, int depth, Node* np) {
+// 將算好的盤面存入雜湊表 // 增加inline
+inline void PutInHash(Hashmap& map, BitBoard& bb, int depth, Node* np) {
 	clock_t start = clock();
 
 	// 建立 Key
 	HashTableKey key(bb.existB ^ mask, bb.existR ^ mask, bb.existP ^ mask, bb.existEB ^ mask, bb.existER ^ mask, depth);
 
 	// 建立 Key-Value 的組合
-	pair<HashTableKey, Node*> keyValue = pair<HashTableKey, Node*>(key, move(np));
+	std::pair<HashTableKey, Node*> keyValue = std::pair<HashTableKey, Node*>(key, std::move(np));
 
 	map.insert(move(keyValue));
 
@@ -166,10 +166,10 @@ void PutInHash(HashMap& map, BitBoard& bb, int depth, Node* np) {
 	hashputtime += (end - start);
 }
 
-// 取得雜湊表大小
-size_t CountHashSize(HashMap map) {
+// 取得雜湊表大小 // 增加inline
+inline size_t CountHashSize(Hashmap map) {
 	return map.size();
 }
 
-// 全域節點計數器
-unsigned int nodeCount = 1;
+// 全域節點計數器 // 增加inline
+inline unsigned int nodeCount = 1;

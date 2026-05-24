@@ -41,6 +41,9 @@
     <ClInclude Include="CsvToJson.h">
       <Filter>header</Filter>
     </ClInclude>
+    <ClInclude Include="answerGenerator.h">
+      <Filter>header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -49,8 +52,15 @@
     <ClCompile Include="CsvToJson.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="answerGenerator.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="test.csv" />
+    <None Include="questions.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
   </ItemGroup>
 </Project>

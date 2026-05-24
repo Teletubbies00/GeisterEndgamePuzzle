@@ -5,26 +5,26 @@
 
 // 這是「著法排序（Move Ordering）」的陣列。
 // 在 AI 搜尋樹中，如果先嘗試「好」的步數，可以更快觸發 Alpha-Beta 剪枝。
-// 這裡預先定義了兩個陣列（對應雙方），依照特定優先級排出 36 個格子的順序。
-int moveOrderArray[2][36] = { { 0,5,30,35,1,6,4,11,24,31,29,34,2,7,12,3,10,17,18,25,32,23,28,33,8,13,9,16,19,26,22,27,14,15,20,21 },
+// 這裡預先定義了兩個陣列（對應雙方），依照特定優先級排出 36 個格子的順序。 // 加上inline
+inline int moveOrderArray[2][36] = { { 0,5,30,35,1,6,4,11,24,31,29,34,2,7,12,3,10,17,18,25,32,23,28,33,8,13,9,16,19,26,22,27,14,15,20,21 },
 							  { 30,35,0,5,24,31,29,34,1,6,4,11,18,25,32,23,28,33,2,7,12,3,10,17,22,27,14,15,20,21,8,13,9,16,19,26 } };
 
 // 下面這組常數是「位元遮罩（Bit Mask）」。
 // 棋盤格編號為 0~35。例如 0x21 換算成二進位是 0...0010 0001，代表第 0 格和第 5 格。
-// 0000 0000 0000 0000 0000 0000 0000 0010 0001 == 0x21
-const long long playerExitBB = 0x21ll;
-// 1000 0100 0000 0000 0000 0000 0000 0000 0000 == 0x840000000
-const long long oppExitBB = 0x840000000ll;
-// 1111 1111 1111 1111 1100 0000 0000 0000 0000 == 0xffffc0000
-const long long playerZoneBB = 0xffffc0000ll;
-// 0000 0000 0000 0000 0011 1111 1111 1111 1111 == 0x3ffff
-const long long oppZoneBB = 0x3ffffll;
-// 1110 0011 1000 1110 0011 1000 1110 0011 1000 == 0xe38e38e38;
-const long long leftZoneBB = 0xe38e38e38ll;
+// 0000 0000 0000 0000 0000 0000 0000 0010 0001 == 0x21  // 加上inline
+inline const long long playerExitBB = 0x21ll;
+// 1000 0100 0000 0000 0000 0000 0000 0000 0000 == 0x840000000 // 加上inline
+inline const long long oppExitBB = 0x840000000ll;
+// 1111 1111 1111 1111 1100 0000 0000 0000 0000 == 0xffffc0000 // 加上inline
+inline const long long playerZoneBB = 0xffffc0000ll;
+// 0000 0000 0000 0000 0011 1111 1111 1111 1111 == 0x3ffff // 加上inline
+inline const long long oppZoneBB = 0x3ffffll;
+// 1110 0011 1000 1110 0011 1000 1110 0011 1000 == 0xe38e38e38; // 加上inline
+inline const long long leftZoneBB = 0xe38e38e38ll;
 
-// Manhattan Distance（曼哈頓距離）表。預先算好任兩格之間的最短步數，節省計算時間。
-int manhattanDistance[36][36];
-void initializeManhattanDistance() {
+// Manhattan Distance（曼哈頓距離）表。預先算好任兩格之間的最短步數，節省計算時間。 // 加上inline
+inline int manhattanDistance[36][36];
+inline void initializeManhattanDistance() { // 加上inline
 	for (int grid1 = 0; grid1 < 36; grid1++) {
 		int x1 = grid1 % 6;
 		int y1 = grid1 / 6;
@@ -85,7 +85,7 @@ public:
 
 	// 將字串格式 ("......B....u...") 轉換成 Bitboard 格式
 	// board[i] 表示第 i 格的棋子種類
-	void toBitBoard(string board) {
+	void toBitBoard(std::string board) {
 		existR = existB = existP = existEB = existER = 0;
 		for (int i = 0; i < 36; i++) {
 			if (board[i] == 'R') { existR |= (1LL << i); }
@@ -97,8 +97,8 @@ public:
 	}
 
 	// 將 Bitboard 轉回字串格式，方便除錯或輸出
-	string returnString() {
-		string board = ".................................... ";
+	std::string returnstring() {
+		std::string board = ".................................... ";
 		for (int i = 0; i < 36; i++) {
 			if ((existB >> i) & 1LL) board[i] = 'B';
 			if ((existR >> i) & 1LL) board[i] = 'R';
@@ -219,9 +219,9 @@ public:
 		else if ((existP >> from) & 1)
 			moveP(from, to);
 		else {
-			cout << "error board" << endl;
+			std::cout << "error board" << std::endl;
 			printBoard();
-			cout << "from = " << from << "to = " << to << endl;
+			std::cout << "from = " << from << "to = " << to << std::endl;
 			assert(0);
 		}
 
@@ -230,7 +230,7 @@ public:
 	// 判斷遊戲是否結束，回傳勝利方
 	// 回傳值：0,2 代表己方贏；1,3 代表敵方贏；4 代表尚未結束
 	// pnum：用來判斷未知紫棋(P)的數量
-	int check(int player, int pnum, const string& subMode) {
+	int check(int player, int pnum, const std::string& subMode) {
 		// 敵方獲勝條件：己方青棋全被吃光，或敵方紅棋死光且剩下的青+紫棋數小於等於 pnum
 		if (existB == 0 || (existER == 0 && bitCount(existP | existEB) <= pnum)) return 1;
 		bool myRedAllCaptured = (existR == 0);
@@ -267,7 +267,7 @@ public:
 			int id = popLsb(b);
 
 			// 計算這個青鬼到左上角 (0) 和右上角 (5) 兩個脫出口的曼哈頓距離，取比較近的那個
-			int dist = min(manhattanDistance[id][0], manhattanDistance[id][5]);
+			int dist = std::min(manhattanDistance[id][0], manhattanDistance[id][5]);
 
 			// 更新目前盤面上所有青鬼中，距離脫出口最近的距離
 			if (minAction > dist) minAction = dist;
@@ -296,11 +296,11 @@ public:
 			while (b != 0) {
 				int id2 = popLsb(b);  // 抓出己方棋子
 				int dist = manhattanDistance[id1][id2];  // 查表取得曼哈頓距離
-				nearestToOppDistance = min(nearestToOppDistance, dist);
-				overallNearestDistance = min(overallNearestDistance, dist);
+				nearestToOppDistance = std::min(nearestToOppDistance, dist);
+				overallNearestDistance = std::min(overallNearestDistance, dist);
 			}
 			// 更新「最難被吃掉」的目標距離
-			farestToOppDistance = max(farestToOppDistance, nearestToOppDistance);
+			farestToOppDistance = std:: max(farestToOppDistance, nearestToOppDistance);
 		}
 		// 理論下限步數計算：
 		// 要吃掉所有目標，至少要先花 overallNearestDistance 吃掉第一隻。
@@ -308,7 +308,7 @@ public:
 		overallNearestDistance += (bitCount(existP | existEB) - 1) * 2;
 
 		// 回傳兩者中的最大值，這個值一定非常樂觀 (Underestimation)，非常適合用來做 A* 或 Alpha-Beta 的安全剪枝
-		return max(overallNearestDistance, farestToOppDistance);
+		return std::max(overallNearestDistance, farestToOppDistance);
 	}
 
 	// 終端機除錯用的印出盤面函式 (將 64-bit 整數轉換為 6x6 視覺化字元)
@@ -318,15 +318,15 @@ public:
 			for (int x = 0; x < 6; x++) {
 				int id = y * 6 + x;  // 格子 ID (0 ~ 35)
 
-				if ((existR >> id) & 1) cout << "R";
-				else if ((existB >> id) & 1) cout << "B";
-				else if ((existP >> id) & 1) cout << "P";
-				else if ((existER >> id) & 1) cout << "r";
-				else if ((existEB >> id) & 1) cout << "b";
-				else cout << ".";
+				if ((existR >> id) & 1) std::cout << "R";
+				else if ((existB >> id) & 1) std::cout << "B";
+				else if ((existP >> id) & 1) std::cout << "P";
+				else if ((existER >> id) & 1) std::cout << "r";
+				else if ((existEB >> id) & 1) std::cout << "b";
+				else std::cout << ".";
 			}
-			cout << endl;
+			std::cout << std::endl;
 		}
-		cout << endl;
+		std::cout << std::endl;
 	}
 };

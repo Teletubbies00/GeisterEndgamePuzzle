@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -131,6 +131,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,11 +141,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="answerGenerator.h" />
     <ClInclude Include="Bitboard.h" />
     <ClInclude Include="CN.h" />
     <ClInclude Include="ExampleSolution.h" />
     <ClInclude Include="HashTable.h" />
-    <ClInclude Include="CsvToJson.h" />
+    <ClInclude Include="CsvParser.h" />
     <ClInclude Include="IncludeLib.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Random.h" />
@@ -152,11 +154,16 @@
     <ClInclude Include="Search.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CsvToJson.cpp" />
+    <ClCompile Include="answerGenerator.cpp" />
+    <ClCompile Include="CsvParser.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="questions.csv" />
     <None Include="test.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

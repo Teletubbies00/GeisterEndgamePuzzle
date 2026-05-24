@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Geister-Endgame-Puzzle\build\_deps\libpsl_src-subbuild\CMakeFiles\b80fbbf31cdbda2053f4c12c0d147b90\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{3EE5482A-7531-330C-A15E-E3128ADEB8DF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
