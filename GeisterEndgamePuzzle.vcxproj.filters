@@ -38,7 +38,13 @@
     <ClInclude Include="ExampleSolution.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="CsvToJson.h">
+    <ClInclude Include="answerGenerator.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="CsvParser.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="ApiUploader.h">
       <Filter>header</Filter>
     </ClInclude>
   </ItemGroup>
@@ -46,11 +52,21 @@
     <ClCompile Include="main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="CsvToJson.cpp">
+    <ClCompile Include="answerGenerator.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="CsvParser.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="ApiUploader.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="test.csv" />
+    <None Include="questions.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
   </ItemGroup>
 </Project>

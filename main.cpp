@@ -1,24 +1,36 @@
-﻿#include "RandomGeneration.h"
+﻿#define WIN32_LEAN_AND_MEAN
+
+#include "RandomGeneration.h"
 #include "ExampleSolution.h"
+#include "CsvParser.h"
 #include <direct.h>
+#include "ApiUploader.h"
+#pragma comment(lib, "ws2_32.lib")
 std::mt19937_64 IntRandom::mt64;
 
+#include"answerGenerator.h"
+using namespace std;
+// 處理資料
+#define COMMUNICATE_WITH_WEBSITE
+
+
 int main(int argc, char* argv[]) {
-    // -------------------------------//
-    //            新增功能             //
-    // -------------------------------//
     //       傳輸Json給網站功能
-    #if COMMUNICATE_WITH_WEBSITE
-        
-        
+    #ifdef COMMUNICATE_WITH_WEBSITE
+        using ordered_json = nlohmann::ordered_json;
+        ordered_json allPuzzles = Data::convertCsvToJson("test.csv", "result.json");
+
+        // 建議在 C++ 中使用 nullptr 替代 NULL 會更安全
+        if (allPuzzles == nullptr) {
+            cout << "ERROR : No Data in test.csv" << endl;
+            return 0;
+        }
+
+        ApiUploader uploader("127.0.0.1", 8000);
+        uploader.sendJsonData("/upload", allPuzzles);
+
         return 0;
-    #endif // 0
-
-    char buff[256];
-    _getcwd(buff, 256);
-    std::cout << "目前程式輸出的路徑在: " << buff << std::endl;
-
-
+    #endif // COMMUNICATE_WITH_WEBSITE
 
     initializeManhattanDistance();
 
@@ -71,6 +83,7 @@ int main(int argc, char* argv[]) {
     if (argv[1] == string("GetSol")) {
         GetSolution(argvVec);
     }
+    
     clock_t end = clock();
     cout << "Total time = " << double(end - start) / double(CLOCKS_PER_SEC) << " s" << endl;
 }

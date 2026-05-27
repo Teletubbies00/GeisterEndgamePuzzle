@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Geister-Endgame-Puzzle\build\_deps\zlib-subbuild\CMakeFiles\e75262ee712d302fc21116474b5265e8\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{73E43DED-24D7-3930-98CF-999371358CDD}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

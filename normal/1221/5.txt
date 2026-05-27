@@ -424,3 +424,3837 @@ R..R..
 actionCount 5 : 27
 actionCount 7 : 3
 
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 192
+maxpn =       0, maxdn =       0
+..u...
+...R..
+u....B
+....R.
+....u.
+......
+
+..u......R..u....B....R.....u.......
+
+actionCount 5 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+u.....
+......
+...u.B
+..R..u
+...R..
+......
+
+u..............u.B..R..u...R........
+
+actionCount 5 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.B....
+...Ru.
+..Ru..
+......
+..u...
+
+.......B.......Ru...Ru..........u...
+
+actionCount 5 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 193
+maxpn =       0, maxdn =       0
+......
+......
+B.R.u.
+u.....
+....R.
+..u...
+
+............B.R.u.u.........R...u...
+
+actionCount 5 : 4
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+......
+u.....
+..u..B
+......
+.u....
+....RR
+
+......u.......u..B.......u........RR
+
+actionCount 5 : 5
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 158
+maxpn =       0, maxdn =       0
+R.R...
+u.....
+.u...B
+.....u
+......
+......
+
+R.R...u......u...B.....u............
+
+actionCount 5 : 6
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+......
+......
+.....B
+.u..u.
+.u....
+R...R.
+
+.................B.u..u..u....R...R.
+
+actionCount 5 : 7
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B...
+......
+...uu.
+...u..
+..R.R.
+......
+
+..B............uu....u....R.R.......
+
+actionCount 5 : 8
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B..R
+...u..
+......
+..R.uu
+......
+......
+
+..B..R...u..........R.uu............
+
+actionCount 5 : 9
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 172
+maxpn =       0, maxdn =       0
+..B..R
+......
+.....u
+u..R..
+....u.
+......
+
+..B..R...........uu..R......u.......
+
+actionCount 5 : 10
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 201
+maxpn =       0, maxdn =       0
+..R...
+.Bu...
+......
+u.....
+..u...
+.....R
+
+..R....Bu.........u.......u........R
+
+actionCount 5 : 11
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 232
+maxpn =       0, maxdn =       0
+......
+.Bu...
+.R....
+......
+...Ru.
+..u...
+
+.......Bu....R.............Ru...u...
+
+actionCount 5 : 12
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 174
+maxpn =       0, maxdn =       0
+...B..
+......
+....R.
+....u.
+..u..R
+..u...
+
+...B............R.....u...u..R..u...
+
+actionCount 5 : 13
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 161
+maxpn =       0, maxdn =       0
+u..B..
+.R....
+.....R
+.....u
+...u..
+......
+
+u..B...R.........R.....u...u........
+
+actionCount 5 : 14
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.....R
+B..u..
+......
+.u..u.
+.R....
+
+...........RB..u.........u..u..R....
+
+actionCount 5 : 15
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 224
+maxpn =       0, maxdn =       0
+R.....
+....B.
+R...u.
+.u....
+...u..
+......
+
+R.........B.R...u..u.......u........
+
+actionCount 5 : 16
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 194
+maxpn =       0, maxdn =       0
+...u.u
+.B....
+....R.
+.R....
+.u....
+......
+
+...u.u.B........R..R.....u..........
+
+actionCount 5 : 17
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 169
+maxpn =       0, maxdn =       0
+.uRB..
+......
+......
+u.....
+R..u..
+......
+
+.uRB..............u.....R..u........
+
+actionCount 5 : 18
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 155
+maxpn =       0, maxdn =       0
+...B..
+.u.u..
+.u..RR
+......
+......
+......
+
+...B...u.u...u..RR..................
+
+actionCount 5 : 19
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+....R.
+......
+B....u
+......
+....u.
+.Ru...
+
+....R.......B....u..........u..Ru...
+
+actionCount 5 : 20
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 199
+maxpn =       0, maxdn =       0
+......
+uR..B.
+.u....
+...R..
+.u....
+......
+
+......uR..B..u.......R...u..........
+
+actionCount 5 : 21
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 206
+maxpn =       0, maxdn =       0
+......
+.B..R.
+....u.
+u....u
+...R..
+......
+
+.......B..R.....u.u....u...R........
+
+actionCount 5 : 22
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+...uu.
+.B....
+...R..
+..Ru..
+......
+......
+
+...uu..B.......R....Ru..............
+
+actionCount 5 : 23
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 211
+maxpn =       0, maxdn =       0
+......
+..u...
+....uB
+.....R
+....u.
+....R.
+
+........u.......uB.....R....u.....R.
+
+actionCount 5 : 24
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 177
+maxpn =       0, maxdn =       0
+....u.
+......
+Bu....
+u.....
+.R....
+...R..
+
+....u.......Bu....u......R.......R..
+
+actionCount 5 : 25
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 148
+maxpn =       0, maxdn =       0
+...B..
+R.....
+...uu.
+....u.
+....R.
+......
+
+...B..R........uu.....u.....R.......
+
+actionCount 5 : 26
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+.u....
+....B.
+...u..
+u.....
+......
+R..R..
+
+.u........B....u..u...........R..R..
+
+actionCount 5 : 27
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 192
+maxpn =       0, maxdn =       0
+..u...
+...R..
+u....B
+....R.
+....u.
+......
+
+..u......R..u....B....R.....u.......
+
+actionCount 5 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+u.....
+......
+...u.B
+..R..u
+...R..
+......
+
+u..............u.B..R..u...R........
+
+actionCount 5 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.B....
+...Ru.
+..Ru..
+......
+..u...
+
+.......B.......Ru...Ru..........u...
+
+actionCount 5 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 193
+maxpn =       0, maxdn =       0
+......
+......
+B.R.u.
+u.....
+....R.
+..u...
+
+............B.R.u.u.........R...u...
+
+actionCount 5 : 4
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+......
+u.....
+..u..B
+......
+.u....
+....RR
+
+......u.......u..B.......u........RR
+
+actionCount 5 : 5
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 158
+maxpn =       0, maxdn =       0
+R.R...
+u.....
+.u...B
+.....u
+......
+......
+
+R.R...u......u...B.....u............
+
+actionCount 5 : 6
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+......
+......
+.....B
+.u..u.
+.u....
+R...R.
+
+.................B.u..u..u....R...R.
+
+actionCount 5 : 7
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B...
+......
+...uu.
+...u..
+..R.R.
+......
+
+..B............uu....u....R.R.......
+
+actionCount 5 : 8
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B..R
+...u..
+......
+..R.uu
+......
+......
+
+..B..R...u..........R.uu............
+
+actionCount 5 : 9
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 172
+maxpn =       0, maxdn =       0
+..B..R
+......
+.....u
+u..R..
+....u.
+......
+
+..B..R...........uu..R......u.......
+
+actionCount 5 : 10
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 201
+maxpn =       0, maxdn =       0
+..R...
+.Bu...
+......
+u.....
+..u...
+.....R
+
+..R....Bu.........u.......u........R
+
+actionCount 5 : 11
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 232
+maxpn =       0, maxdn =       0
+......
+.Bu...
+.R....
+......
+...Ru.
+..u...
+
+.......Bu....R.............Ru...u...
+
+actionCount 5 : 12
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 174
+maxpn =       0, maxdn =       0
+...B..
+......
+....R.
+....u.
+..u..R
+..u...
+
+...B............R.....u...u..R..u...
+
+actionCount 5 : 13
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 161
+maxpn =       0, maxdn =       0
+u..B..
+.R....
+.....R
+.....u
+...u..
+......
+
+u..B...R.........R.....u...u........
+
+actionCount 5 : 14
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.....R
+B..u..
+......
+.u..u.
+.R....
+
+...........RB..u.........u..u..R....
+
+actionCount 5 : 15
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 224
+maxpn =       0, maxdn =       0
+R.....
+....B.
+R...u.
+.u....
+...u..
+......
+
+R.........B.R...u..u.......u........
+
+actionCount 5 : 16
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 194
+maxpn =       0, maxdn =       0
+...u.u
+.B....
+....R.
+.R....
+.u....
+......
+
+...u.u.B........R..R.....u..........
+
+actionCount 5 : 17
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 169
+maxpn =       0, maxdn =       0
+.uRB..
+......
+......
+u.....
+R..u..
+......
+
+.uRB..............u.....R..u........
+
+actionCount 5 : 18
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 155
+maxpn =       0, maxdn =       0
+...B..
+.u.u..
+.u..RR
+......
+......
+......
+
+...B...u.u...u..RR..................
+
+actionCount 5 : 19
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+....R.
+......
+B....u
+......
+....u.
+.Ru...
+
+....R.......B....u..........u..Ru...
+
+actionCount 5 : 20
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 199
+maxpn =       0, maxdn =       0
+......
+uR..B.
+.u....
+...R..
+.u....
+......
+
+......uR..B..u.......R...u..........
+
+actionCount 5 : 21
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 206
+maxpn =       0, maxdn =       0
+......
+.B..R.
+....u.
+u....u
+...R..
+......
+
+.......B..R.....u.u....u...R........
+
+actionCount 5 : 22
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+...uu.
+.B....
+...R..
+..Ru..
+......
+......
+
+...uu..B.......R....Ru..............
+
+actionCount 5 : 23
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 211
+maxpn =       0, maxdn =       0
+......
+..u...
+....uB
+.....R
+....u.
+....R.
+
+........u.......uB.....R....u.....R.
+
+actionCount 5 : 24
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 177
+maxpn =       0, maxdn =       0
+....u.
+......
+Bu....
+u.....
+.R....
+...R..
+
+....u.......Bu....u......R.......R..
+
+actionCount 5 : 25
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 148
+maxpn =       0, maxdn =       0
+...B..
+R.....
+...uu.
+....u.
+....R.
+......
+
+...B..R........uu.....u.....R.......
+
+actionCount 5 : 26
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+.u....
+....B.
+...u..
+u.....
+......
+R..R..
+
+.u........B....u..u...........R..R..
+
+actionCount 5 : 27
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 192
+maxpn =       0, maxdn =       0
+..u...
+...R..
+u....B
+....R.
+....u.
+......
+
+..u......R..u....B....R.....u.......
+
+actionCount 5 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+u.....
+......
+...u.B
+..R..u
+...R..
+......
+
+u..............u.B..R..u...R........
+
+actionCount 5 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.B....
+...Ru.
+..Ru..
+......
+..u...
+
+.......B.......Ru...Ru..........u...
+
+actionCount 5 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 193
+maxpn =       0, maxdn =       0
+......
+......
+B.R.u.
+u.....
+....R.
+..u...
+
+............B.R.u.u.........R...u...
+
+actionCount 5 : 4
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+......
+u.....
+..u..B
+......
+.u....
+....RR
+
+......u.......u..B.......u........RR
+
+actionCount 5 : 5
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 158
+maxpn =       0, maxdn =       0
+R.R...
+u.....
+.u...B
+.....u
+......
+......
+
+R.R...u......u...B.....u............
+
+actionCount 5 : 6
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+......
+......
+.....B
+.u..u.
+.u....
+R...R.
+
+.................B.u..u..u....R...R.
+
+actionCount 5 : 7
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B...
+......
+...uu.
+...u..
+..R.R.
+......
+
+..B............uu....u....R.R.......
+
+actionCount 5 : 8
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B..R
+...u..
+......
+..R.uu
+......
+......
+
+..B..R...u..........R.uu............
+
+actionCount 5 : 9
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 172
+maxpn =       0, maxdn =       0
+..B..R
+......
+.....u
+u..R..
+....u.
+......
+
+..B..R...........uu..R......u.......
+
+actionCount 5 : 10
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 201
+maxpn =       0, maxdn =       0
+..R...
+.Bu...
+......
+u.....
+..u...
+.....R
+
+..R....Bu.........u.......u........R
+
+actionCount 5 : 11
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 232
+maxpn =       0, maxdn =       0
+......
+.Bu...
+.R....
+......
+...Ru.
+..u...
+
+.......Bu....R.............Ru...u...
+
+actionCount 5 : 12
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 174
+maxpn =       0, maxdn =       0
+...B..
+......
+....R.
+....u.
+..u..R
+..u...
+
+...B............R.....u...u..R..u...
+
+actionCount 5 : 13
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 161
+maxpn =       0, maxdn =       0
+u..B..
+.R....
+.....R
+.....u
+...u..
+......
+
+u..B...R.........R.....u...u........
+
+actionCount 5 : 14
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.....R
+B..u..
+......
+.u..u.
+.R....
+
+...........RB..u.........u..u..R....
+
+actionCount 5 : 15
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 224
+maxpn =       0, maxdn =       0
+R.....
+....B.
+R...u.
+.u....
+...u..
+......
+
+R.........B.R...u..u.......u........
+
+actionCount 5 : 16
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 194
+maxpn =       0, maxdn =       0
+...u.u
+.B....
+....R.
+.R....
+.u....
+......
+
+...u.u.B........R..R.....u..........
+
+actionCount 5 : 17
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 169
+maxpn =       0, maxdn =       0
+.uRB..
+......
+......
+u.....
+R..u..
+......
+
+.uRB..............u.....R..u........
+
+actionCount 5 : 18
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 155
+maxpn =       0, maxdn =       0
+...B..
+.u.u..
+.u..RR
+......
+......
+......
+
+...B...u.u...u..RR..................
+
+actionCount 5 : 19
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+....R.
+......
+B....u
+......
+....u.
+.Ru...
+
+....R.......B....u..........u..Ru...
+
+actionCount 5 : 20
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 199
+maxpn =       0, maxdn =       0
+......
+uR..B.
+.u....
+...R..
+.u....
+......
+
+......uR..B..u.......R...u..........
+
+actionCount 5 : 21
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 206
+maxpn =       0, maxdn =       0
+......
+.B..R.
+....u.
+u....u
+...R..
+......
+
+.......B..R.....u.u....u...R........
+
+actionCount 5 : 22
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+...uu.
+.B....
+...R..
+..Ru..
+......
+......
+
+...uu..B.......R....Ru..............
+
+actionCount 5 : 23
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 211
+maxpn =       0, maxdn =       0
+......
+..u...
+....uB
+.....R
+....u.
+....R.
+
+........u.......uB.....R....u.....R.
+
+actionCount 5 : 24
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 177
+maxpn =       0, maxdn =       0
+....u.
+......
+Bu....
+u.....
+.R....
+...R..
+
+....u.......Bu....u......R.......R..
+
+actionCount 5 : 25
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 148
+maxpn =       0, maxdn =       0
+...B..
+R.....
+...uu.
+....u.
+....R.
+......
+
+...B..R........uu.....u.....R.......
+
+actionCount 5 : 26
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+.u....
+....B.
+...u..
+u.....
+......
+R..R..
+
+.u........B....u..u...........R..R..
+
+actionCount 5 : 27
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 192
+maxpn =       0, maxdn =       0
+..u...
+...R..
+u....B
+....R.
+....u.
+......
+
+..u......R..u....B....R.....u.......
+
+actionCount 5 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+u.....
+......
+...u.B
+..R..u
+...R..
+......
+
+u..............u.B..R..u...R........
+
+actionCount 5 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.B....
+...Ru.
+..Ru..
+......
+..u...
+
+.......B.......Ru...Ru..........u...
+
+actionCount 5 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 193
+maxpn =       0, maxdn =       0
+......
+......
+B.R.u.
+u.....
+....R.
+..u...
+
+............B.R.u.u.........R...u...
+
+actionCount 5 : 4
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+......
+u.....
+..u..B
+......
+.u....
+....RR
+
+......u.......u..B.......u........RR
+
+actionCount 5 : 5
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 158
+maxpn =       0, maxdn =       0
+R.R...
+u.....
+.u...B
+.....u
+......
+......
+
+R.R...u......u...B.....u............
+
+actionCount 5 : 6
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+......
+......
+.....B
+.u..u.
+.u....
+R...R.
+
+.................B.u..u..u....R...R.
+
+actionCount 5 : 7
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B...
+......
+...uu.
+...u..
+..R.R.
+......
+
+..B............uu....u....R.R.......
+
+actionCount 5 : 8
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B..R
+...u..
+......
+..R.uu
+......
+......
+
+..B..R...u..........R.uu............
+
+actionCount 5 : 9
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 172
+maxpn =       0, maxdn =       0
+..B..R
+......
+.....u
+u..R..
+....u.
+......
+
+..B..R...........uu..R......u.......
+
+actionCount 5 : 10
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 201
+maxpn =       0, maxdn =       0
+..R...
+.Bu...
+......
+u.....
+..u...
+.....R
+
+..R....Bu.........u.......u........R
+
+actionCount 5 : 11
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 232
+maxpn =       0, maxdn =       0
+......
+.Bu...
+.R....
+......
+...Ru.
+..u...
+
+.......Bu....R.............Ru...u...
+
+actionCount 5 : 12
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 174
+maxpn =       0, maxdn =       0
+...B..
+......
+....R.
+....u.
+..u..R
+..u...
+
+...B............R.....u...u..R..u...
+
+actionCount 5 : 13
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 161
+maxpn =       0, maxdn =       0
+u..B..
+.R....
+.....R
+.....u
+...u..
+......
+
+u..B...R.........R.....u...u........
+
+actionCount 5 : 14
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.....R
+B..u..
+......
+.u..u.
+.R....
+
+...........RB..u.........u..u..R....
+
+actionCount 5 : 15
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 224
+maxpn =       0, maxdn =       0
+R.....
+....B.
+R...u.
+.u....
+...u..
+......
+
+R.........B.R...u..u.......u........
+
+actionCount 5 : 16
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 194
+maxpn =       0, maxdn =       0
+...u.u
+.B....
+....R.
+.R....
+.u....
+......
+
+...u.u.B........R..R.....u..........
+
+actionCount 5 : 17
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 169
+maxpn =       0, maxdn =       0
+.uRB..
+......
+......
+u.....
+R..u..
+......
+
+.uRB..............u.....R..u........
+
+actionCount 5 : 18
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 155
+maxpn =       0, maxdn =       0
+...B..
+.u.u..
+.u..RR
+......
+......
+......
+
+...B...u.u...u..RR..................
+
+actionCount 5 : 19
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+....R.
+......
+B....u
+......
+....u.
+.Ru...
+
+....R.......B....u..........u..Ru...
+
+actionCount 5 : 20
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 199
+maxpn =       0, maxdn =       0
+......
+uR..B.
+.u....
+...R..
+.u....
+......
+
+......uR..B..u.......R...u..........
+
+actionCount 5 : 21
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 206
+maxpn =       0, maxdn =       0
+......
+.B..R.
+....u.
+u....u
+...R..
+......
+
+.......B..R.....u.u....u...R........
+
+actionCount 5 : 22
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+...uu.
+.B....
+...R..
+..Ru..
+......
+......
+
+...uu..B.......R....Ru..............
+
+actionCount 5 : 23
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 211
+maxpn =       0, maxdn =       0
+......
+..u...
+....uB
+.....R
+....u.
+....R.
+
+........u.......uB.....R....u.....R.
+
+actionCount 5 : 24
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 177
+maxpn =       0, maxdn =       0
+....u.
+......
+Bu....
+u.....
+.R....
+...R..
+
+....u.......Bu....u......R.......R..
+
+actionCount 5 : 25
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 148
+maxpn =       0, maxdn =       0
+...B..
+R.....
+...uu.
+....u.
+....R.
+......
+
+...B..R........uu.....u.....R.......
+
+actionCount 5 : 26
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+.u....
+....B.
+...u..
+u.....
+......
+R..R..
+
+.u........B....u..u...........R..R..
+
+actionCount 5 : 27
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 192
+maxpn =       0, maxdn =       0
+..u...
+...R..
+u....B
+....R.
+....u.
+......
+
+..u......R..u....B....R.....u.......
+
+actionCount 5 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+u.....
+......
+...u.B
+..R..u
+...R..
+......
+
+u..............u.B..R..u...R........
+
+actionCount 5 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.B....
+...Ru.
+..Ru..
+......
+..u...
+
+.......B.......Ru...Ru..........u...
+
+actionCount 5 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 193
+maxpn =       0, maxdn =       0
+......
+......
+B.R.u.
+u.....
+....R.
+..u...
+
+............B.R.u.u.........R...u...
+
+actionCount 5 : 4
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+......
+u.....
+..u..B
+......
+.u....
+....RR
+
+......u.......u..B.......u........RR
+
+actionCount 5 : 5
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 158
+maxpn =       0, maxdn =       0
+R.R...
+u.....
+.u...B
+.....u
+......
+......
+
+R.R...u......u...B.....u............
+
+actionCount 5 : 6
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+......
+......
+.....B
+.u..u.
+.u....
+R...R.
+
+.................B.u..u..u....R...R.
+
+actionCount 5 : 7
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B...
+......
+...uu.
+...u..
+..R.R.
+......
+
+..B............uu....u....R.R.......
+
+actionCount 5 : 8
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B..R
+...u..
+......
+..R.uu
+......
+......
+
+..B..R...u..........R.uu............
+
+actionCount 5 : 9
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 172
+maxpn =       0, maxdn =       0
+..B..R
+......
+.....u
+u..R..
+....u.
+......
+
+..B..R...........uu..R......u.......
+
+actionCount 5 : 10
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 201
+maxpn =       0, maxdn =       0
+..R...
+.Bu...
+......
+u.....
+..u...
+.....R
+
+..R....Bu.........u.......u........R
+
+actionCount 5 : 11
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 232
+maxpn =       0, maxdn =       0
+......
+.Bu...
+.R....
+......
+...Ru.
+..u...
+
+.......Bu....R.............Ru...u...
+
+actionCount 5 : 12
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 174
+maxpn =       0, maxdn =       0
+...B..
+......
+....R.
+....u.
+..u..R
+..u...
+
+...B............R.....u...u..R..u...
+
+actionCount 5 : 13
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 161
+maxpn =       0, maxdn =       0
+u..B..
+.R....
+.....R
+.....u
+...u..
+......
+
+u..B...R.........R.....u...u........
+
+actionCount 5 : 14
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.....R
+B..u..
+......
+.u..u.
+.R....
+
+...........RB..u.........u..u..R....
+
+actionCount 5 : 15
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 224
+maxpn =       0, maxdn =       0
+R.....
+....B.
+R...u.
+.u....
+...u..
+......
+
+R.........B.R...u..u.......u........
+
+actionCount 5 : 16
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 194
+maxpn =       0, maxdn =       0
+...u.u
+.B....
+....R.
+.R....
+.u....
+......
+
+...u.u.B........R..R.....u..........
+
+actionCount 5 : 17
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 169
+maxpn =       0, maxdn =       0
+.uRB..
+......
+......
+u.....
+R..u..
+......
+
+.uRB..............u.....R..u........
+
+actionCount 5 : 18
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 155
+maxpn =       0, maxdn =       0
+...B..
+.u.u..
+.u..RR
+......
+......
+......
+
+...B...u.u...u..RR..................
+
+actionCount 5 : 19
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+....R.
+......
+B....u
+......
+....u.
+.Ru...
+
+....R.......B....u..........u..Ru...
+
+actionCount 5 : 20
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 199
+maxpn =       0, maxdn =       0
+......
+uR..B.
+.u....
+...R..
+.u....
+......
+
+......uR..B..u.......R...u..........
+
+actionCount 5 : 21
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 206
+maxpn =       0, maxdn =       0
+......
+.B..R.
+....u.
+u....u
+...R..
+......
+
+.......B..R.....u.u....u...R........
+
+actionCount 5 : 22
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+...uu.
+.B....
+...R..
+..Ru..
+......
+......
+
+...uu..B.......R....Ru..............
+
+actionCount 5 : 23
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 211
+maxpn =       0, maxdn =       0
+......
+..u...
+....uB
+.....R
+....u.
+....R.
+
+........u.......uB.....R....u.....R.
+
+actionCount 5 : 24
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 177
+maxpn =       0, maxdn =       0
+....u.
+......
+Bu....
+u.....
+.R....
+...R..
+
+....u.......Bu....u......R.......R..
+
+actionCount 5 : 25
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 148
+maxpn =       0, maxdn =       0
+...B..
+R.....
+...uu.
+....u.
+....R.
+......
+
+...B..R........uu.....u.....R.......
+
+actionCount 5 : 26
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+.u....
+....B.
+...u..
+u.....
+......
+R..R..
+
+.u........B....u..u...........R..R..
+
+actionCount 5 : 27
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 192
+maxpn =       0, maxdn =       0
+..u...
+...R..
+u....B
+....R.
+....u.
+......
+
+..u......R..u....B....R.....u.......
+
+actionCount 5 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+u.....
+......
+...u.B
+..R..u
+...R..
+......
+
+u..............u.B..R..u...R........
+
+actionCount 5 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.B....
+...Ru.
+..Ru..
+......
+..u...
+
+.......B.......Ru...Ru..........u...
+
+actionCount 5 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 193
+maxpn =       0, maxdn =       0
+......
+......
+B.R.u.
+u.....
+....R.
+..u...
+
+............B.R.u.u.........R...u...
+
+actionCount 5 : 4
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+......
+u.....
+..u..B
+......
+.u....
+....RR
+
+......u.......u..B.......u........RR
+
+actionCount 5 : 5
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 158
+maxpn =       0, maxdn =       0
+R.R...
+u.....
+.u...B
+.....u
+......
+......
+
+R.R...u......u...B.....u............
+
+actionCount 5 : 6
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+......
+......
+.....B
+.u..u.
+.u....
+R...R.
+
+.................B.u..u..u....R...R.
+
+actionCount 5 : 7
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B...
+......
+...uu.
+...u..
+..R.R.
+......
+
+..B............uu....u....R.R.......
+
+actionCount 5 : 8
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B..R
+...u..
+......
+..R.uu
+......
+......
+
+..B..R...u..........R.uu............
+
+actionCount 5 : 9
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 172
+maxpn =       0, maxdn =       0
+..B..R
+......
+.....u
+u..R..
+....u.
+......
+
+..B..R...........uu..R......u.......
+
+actionCount 5 : 10
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 201
+maxpn =       0, maxdn =       0
+..R...
+.Bu...
+......
+u.....
+..u...
+.....R
+
+..R....Bu.........u.......u........R
+
+actionCount 5 : 11
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 232
+maxpn =       0, maxdn =       0
+......
+.Bu...
+.R....
+......
+...Ru.
+..u...
+
+.......Bu....R.............Ru...u...
+
+actionCount 5 : 12
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 174
+maxpn =       0, maxdn =       0
+...B..
+......
+....R.
+....u.
+..u..R
+..u...
+
+...B............R.....u...u..R..u...
+
+actionCount 5 : 13
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 161
+maxpn =       0, maxdn =       0
+u..B..
+.R....
+.....R
+.....u
+...u..
+......
+
+u..B...R.........R.....u...u........
+
+actionCount 5 : 14
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.....R
+B..u..
+......
+.u..u.
+.R....
+
+...........RB..u.........u..u..R....
+
+actionCount 5 : 15
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 224
+maxpn =       0, maxdn =       0
+R.....
+....B.
+R...u.
+.u....
+...u..
+......
+
+R.........B.R...u..u.......u........
+
+actionCount 5 : 16
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 194
+maxpn =       0, maxdn =       0
+...u.u
+.B....
+....R.
+.R....
+.u....
+......
+
+...u.u.B........R..R.....u..........
+
+actionCount 5 : 17
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 169
+maxpn =       0, maxdn =       0
+.uRB..
+......
+......
+u.....
+R..u..
+......
+
+.uRB..............u.....R..u........
+
+actionCount 5 : 18
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 155
+maxpn =       0, maxdn =       0
+...B..
+.u.u..
+.u..RR
+......
+......
+......
+
+...B...u.u...u..RR..................
+
+actionCount 5 : 19
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+....R.
+......
+B....u
+......
+....u.
+.Ru...
+
+....R.......B....u..........u..Ru...
+
+actionCount 5 : 20
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 199
+maxpn =       0, maxdn =       0
+......
+uR..B.
+.u....
+...R..
+.u....
+......
+
+......uR..B..u.......R...u..........
+
+actionCount 5 : 21
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 206
+maxpn =       0, maxdn =       0
+......
+.B..R.
+....u.
+u....u
+...R..
+......
+
+.......B..R.....u.u....u...R........
+
+actionCount 5 : 22
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+...uu.
+.B....
+...R..
+..Ru..
+......
+......
+
+...uu..B.......R....Ru..............
+
+actionCount 5 : 23
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 211
+maxpn =       0, maxdn =       0
+......
+..u...
+....uB
+.....R
+....u.
+....R.
+
+........u.......uB.....R....u.....R.
+
+actionCount 5 : 24
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 177
+maxpn =       0, maxdn =       0
+....u.
+......
+Bu....
+u.....
+.R....
+...R..
+
+....u.......Bu....u......R.......R..
+
+actionCount 5 : 25
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 148
+maxpn =       0, maxdn =       0
+...B..
+R.....
+...uu.
+....u.
+....R.
+......
+
+...B..R........uu.....u.....R.......
+
+actionCount 5 : 26
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+.u....
+....B.
+...u..
+u.....
+......
+R..R..
+
+.u........B....u..u...........R..R..
+
+actionCount 5 : 27
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 192
+maxpn =       0, maxdn =       0
+..u...
+...R..
+u....B
+....R.
+....u.
+......
+
+..u......R..u....B....R.....u.......
+
+actionCount 5 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+u.....
+......
+...u.B
+..R..u
+...R..
+......
+
+u..............u.B..R..u...R........
+
+actionCount 5 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.B....
+...Ru.
+..Ru..
+......
+..u...
+
+.......B.......Ru...Ru..........u...
+
+actionCount 5 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 193
+maxpn =       0, maxdn =       0
+......
+......
+B.R.u.
+u.....
+....R.
+..u...
+
+............B.R.u.u.........R...u...
+
+actionCount 5 : 4
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+......
+u.....
+..u..B
+......
+.u....
+....RR
+
+......u.......u..B.......u........RR
+
+actionCount 5 : 5
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 158
+maxpn =       0, maxdn =       0
+R.R...
+u.....
+.u...B
+.....u
+......
+......
+
+R.R...u......u...B.....u............
+
+actionCount 5 : 6
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+......
+......
+.....B
+.u..u.
+.u....
+R...R.
+
+.................B.u..u..u....R...R.
+
+actionCount 5 : 7
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B...
+......
+...uu.
+...u..
+..R.R.
+......
+
+..B............uu....u....R.R.......
+
+actionCount 5 : 8
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B..R
+...u..
+......
+..R.uu
+......
+......
+
+..B..R...u..........R.uu............
+
+actionCount 5 : 9
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 172
+maxpn =       0, maxdn =       0
+..B..R
+......
+.....u
+u..R..
+....u.
+......
+
+..B..R...........uu..R......u.......
+
+actionCount 5 : 10
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 201
+maxpn =       0, maxdn =       0
+..R...
+.Bu...
+......
+u.....
+..u...
+.....R
+
+..R....Bu.........u.......u........R
+
+actionCount 5 : 11
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 232
+maxpn =       0, maxdn =       0
+......
+.Bu...
+.R....
+......
+...Ru.
+..u...
+
+.......Bu....R.............Ru...u...
+
+actionCount 5 : 12
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 174
+maxpn =       0, maxdn =       0
+...B..
+......
+....R.
+....u.
+..u..R
+..u...
+
+...B............R.....u...u..R..u...
+
+actionCount 5 : 13
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 161
+maxpn =       0, maxdn =       0
+u..B..
+.R....
+.....R
+.....u
+...u..
+......
+
+u..B...R.........R.....u...u........
+
+actionCount 5 : 14
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.....R
+B..u..
+......
+.u..u.
+.R....
+
+...........RB..u.........u..u..R....
+
+actionCount 5 : 15
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 224
+maxpn =       0, maxdn =       0
+R.....
+....B.
+R...u.
+.u....
+...u..
+......
+
+R.........B.R...u..u.......u........
+
+actionCount 5 : 16
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 194
+maxpn =       0, maxdn =       0
+...u.u
+.B....
+....R.
+.R....
+.u....
+......
+
+...u.u.B........R..R.....u..........
+
+actionCount 5 : 17
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 169
+maxpn =       0, maxdn =       0
+.uRB..
+......
+......
+u.....
+R..u..
+......
+
+.uRB..............u.....R..u........
+
+actionCount 5 : 18
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 155
+maxpn =       0, maxdn =       0
+...B..
+.u.u..
+.u..RR
+......
+......
+......
+
+...B...u.u...u..RR..................
+
+actionCount 5 : 19
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+....R.
+......
+B....u
+......
+....u.
+.Ru...
+
+....R.......B....u..........u..Ru...
+
+actionCount 5 : 20
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 199
+maxpn =       0, maxdn =       0
+......
+uR..B.
+.u....
+...R..
+.u....
+......
+
+......uR..B..u.......R...u..........
+
+actionCount 5 : 21
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 206
+maxpn =       0, maxdn =       0
+......
+.B..R.
+....u.
+u....u
+...R..
+......
+
+.......B..R.....u.u....u...R........
+
+actionCount 5 : 22
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+...uu.
+.B....
+...R..
+..Ru..
+......
+......
+
+...uu..B.......R....Ru..............
+
+actionCount 5 : 23
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 211
+maxpn =       0, maxdn =       0
+......
+..u...
+....uB
+.....R
+....u.
+....R.
+
+........u.......uB.....R....u.....R.
+
+actionCount 5 : 24
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 177
+maxpn =       0, maxdn =       0
+....u.
+......
+Bu....
+u.....
+.R....
+...R..
+
+....u.......Bu....u......R.......R..
+
+actionCount 5 : 25
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 148
+maxpn =       0, maxdn =       0
+...B..
+R.....
+...uu.
+....u.
+....R.
+......
+
+...B..R........uu.....u.....R.......
+
+actionCount 5 : 26
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+.u....
+....B.
+...u..
+u.....
+......
+R..R..
+
+.u........B....u..u...........R..R..
+
+actionCount 5 : 27
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 192
+maxpn =       0, maxdn =       0
+..u...
+...R..
+u....B
+....R.
+....u.
+......
+
+..u......R..u....B....R.....u.......
+
+actionCount 5 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+u.....
+......
+...u.B
+..R..u
+...R..
+......
+
+u..............u.B..R..u...R........
+
+actionCount 5 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.B....
+...Ru.
+..Ru..
+......
+..u...
+
+.......B.......Ru...Ru..........u...
+
+actionCount 5 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 193
+maxpn =       0, maxdn =       0
+......
+......
+B.R.u.
+u.....
+....R.
+..u...
+
+............B.R.u.u.........R...u...
+
+actionCount 5 : 4
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+......
+u.....
+..u..B
+......
+.u....
+....RR
+
+......u.......u..B.......u........RR
+
+actionCount 5 : 5
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 158
+maxpn =       0, maxdn =       0
+R.R...
+u.....
+.u...B
+.....u
+......
+......
+
+R.R...u......u...B.....u............
+
+actionCount 5 : 6
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+......
+......
+.....B
+.u..u.
+.u....
+R...R.
+
+.................B.u..u..u....R...R.
+
+actionCount 5 : 7
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B...
+......
+...uu.
+...u..
+..R.R.
+......
+
+..B............uu....u....R.R.......
+
+actionCount 5 : 8
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B..R
+...u..
+......
+..R.uu
+......
+......
+
+..B..R...u..........R.uu............
+
+actionCount 5 : 9
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 172
+maxpn =       0, maxdn =       0
+..B..R
+......
+.....u
+u..R..
+....u.
+......
+
+..B..R...........uu..R......u.......
+
+actionCount 5 : 10
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 201
+maxpn =       0, maxdn =       0
+..R...
+.Bu...
+......
+u.....
+..u...
+.....R
+
+..R....Bu.........u.......u........R
+
+actionCount 5 : 11
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 232
+maxpn =       0, maxdn =       0
+......
+.Bu...
+.R....
+......
+...Ru.
+..u...
+
+.......Bu....R.............Ru...u...
+
+actionCount 5 : 12
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 174
+maxpn =       0, maxdn =       0
+...B..
+......
+....R.
+....u.
+..u..R
+..u...
+
+...B............R.....u...u..R..u...
+
+actionCount 5 : 13
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 161
+maxpn =       0, maxdn =       0
+u..B..
+.R....
+.....R
+.....u
+...u..
+......
+
+u..B...R.........R.....u...u........
+
+actionCount 5 : 14
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.....R
+B..u..
+......
+.u..u.
+.R....
+
+...........RB..u.........u..u..R....
+
+actionCount 5 : 15
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 224
+maxpn =       0, maxdn =       0
+R.....
+....B.
+R...u.
+.u....
+...u..
+......
+
+R.........B.R...u..u.......u........
+
+actionCount 5 : 16
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 194
+maxpn =       0, maxdn =       0
+...u.u
+.B....
+....R.
+.R....
+.u....
+......
+
+...u.u.B........R..R.....u..........
+
+actionCount 5 : 17
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 169
+maxpn =       0, maxdn =       0
+.uRB..
+......
+......
+u.....
+R..u..
+......
+
+.uRB..............u.....R..u........
+
+actionCount 5 : 18
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 155
+maxpn =       0, maxdn =       0
+...B..
+.u.u..
+.u..RR
+......
+......
+......
+
+...B...u.u...u..RR..................
+
+actionCount 5 : 19
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+....R.
+......
+B....u
+......
+....u.
+.Ru...
+
+....R.......B....u..........u..Ru...
+
+actionCount 5 : 20
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 199
+maxpn =       0, maxdn =       0
+......
+uR..B.
+.u....
+...R..
+.u....
+......
+
+......uR..B..u.......R...u..........
+
+actionCount 5 : 21
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 206
+maxpn =       0, maxdn =       0
+......
+.B..R.
+....u.
+u....u
+...R..
+......
+
+.......B..R.....u.u....u...R........
+
+actionCount 5 : 22
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+...uu.
+.B....
+...R..
+..Ru..
+......
+......
+
+...uu..B.......R....Ru..............
+
+actionCount 5 : 23
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 211
+maxpn =       0, maxdn =       0
+......
+..u...
+....uB
+.....R
+....u.
+....R.
+
+........u.......uB.....R....u.....R.
+
+actionCount 5 : 24
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 177
+maxpn =       0, maxdn =       0
+....u.
+......
+Bu....
+u.....
+.R....
+...R..
+
+....u.......Bu....u......R.......R..
+
+actionCount 5 : 25
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 148
+maxpn =       0, maxdn =       0
+...B..
+R.....
+...uu.
+....u.
+....R.
+......
+
+...B..R........uu.....u.....R.......
+
+actionCount 5 : 26
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+.u....
+....B.
+...u..
+u.....
+......
+R..R..
+
+.u........B....u..u...........R..R..
+
+actionCount 5 : 27
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 192
+maxpn =       0, maxdn =       0
+..u...
+...R..
+u....B
+....R.
+....u.
+......
+
+..u......R..u....B....R.....u.......
+
+actionCount 5 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+u.....
+......
+...u.B
+..R..u
+...R..
+......
+
+u..............u.B..R..u...R........
+
+actionCount 5 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.B....
+...Ru.
+..Ru..
+......
+..u...
+
+.......B.......Ru...Ru..........u...
+
+actionCount 5 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 193
+maxpn =       0, maxdn =       0
+......
+......
+B.R.u.
+u.....
+....R.
+..u...
+
+............B.R.u.u.........R...u...
+
+actionCount 5 : 4
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 160
+maxpn =       0, maxdn =       0
+......
+u.....
+..u..B
+......
+.u....
+....RR
+
+......u.......u..B.......u........RR
+
+actionCount 5 : 5
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 158
+maxpn =       0, maxdn =       0
+R.R...
+u.....
+.u...B
+.....u
+......
+......
+
+R.R...u......u...B.....u............
+
+actionCount 5 : 6
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+......
+......
+.....B
+.u..u.
+.u....
+R...R.
+
+.................B.u..u..u....R...R.
+
+actionCount 5 : 7
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B...
+......
+...uu.
+...u..
+..R.R.
+......
+
+..B............uu....u....R.R.......
+
+actionCount 5 : 8
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 156
+maxpn =       0, maxdn =       0
+..B..R
+...u..
+......
+..R.uu
+......
+......
+
+..B..R...u..........R.uu............
+
+actionCount 5 : 9
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 172
+maxpn =       0, maxdn =       0
+..B..R
+......
+.....u
+u..R..
+....u.
+......
+
+..B..R...........uu..R......u.......
+
+actionCount 5 : 10
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 201
+maxpn =       0, maxdn =       0
+..R...
+.Bu...
+......
+u.....
+..u...
+.....R
+
+..R....Bu.........u.......u........R
+
+actionCount 5 : 11
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 232
+maxpn =       0, maxdn =       0
+......
+.Bu...
+.R....
+......
+...Ru.
+..u...
+
+.......Bu....R.............Ru...u...
+
+actionCount 5 : 12
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 174
+maxpn =       0, maxdn =       0
+...B..
+......
+....R.
+....u.
+..u..R
+..u...
+
+...B............R.....u...u..R..u...
+
+actionCount 5 : 13
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 161
+maxpn =       0, maxdn =       0
+u..B..
+.R....
+.....R
+.....u
+...u..
+......
+
+u..B...R.........R.....u...u........
+
+actionCount 5 : 14
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 225
+maxpn =       0, maxdn =       0
+......
+.....R
+B..u..
+......
+.u..u.
+.R....
+
+...........RB..u.........u..u..R....
+
+actionCount 5 : 15
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 224
+maxpn =       0, maxdn =       0
+R.....
+....B.
+R...u.
+.u....
+...u..
+......
+
+R.........B.R...u..u.......u........
+
+actionCount 5 : 16
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 194
+maxpn =       0, maxdn =       0
+...u.u
+.B....
+....R.
+.R....
+.u....
+......
+
+...u.u.B........R..R.....u..........
+
+actionCount 5 : 17
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 169
+maxpn =       0, maxdn =       0
+.uRB..
+......
+......
+u.....
+R..u..
+......
+
+.uRB..............u.....R..u........
+
+actionCount 5 : 18
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 155
+maxpn =       0, maxdn =       0
+...B..
+.u.u..
+.u..RR
+......
+......
+......
+
+...B...u.u...u..RR..................
+
+actionCount 5 : 19
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+....R.
+......
+B....u
+......
+....u.
+.Ru...
+
+....R.......B....u..........u..Ru...
+
+actionCount 5 : 20
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 199
+maxpn =       0, maxdn =       0
+......
+uR..B.
+.u....
+...R..
+.u....
+......
+
+......uR..B..u.......R...u..........
+
+actionCount 5 : 21
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 206
+maxpn =       0, maxdn =       0
+......
+.B..R.
+....u.
+u....u
+...R..
+......
+
+.......B..R.....u.u....u...R........
+
+actionCount 5 : 22
+actionCount 7 : 1
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 166
+maxpn =       0, maxdn =       0
+...uu.
+.B....
+...R..
+..Ru..
+......
+......
+
+...uu..B.......R....Ru..............
+
+actionCount 5 : 23
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 211
+maxpn =       0, maxdn =       0
+......
+..u...
+....uB
+.....R
+....u.
+....R.
+
+........u.......uB.....R....u.....R.
+
+actionCount 5 : 24
+actionCount 7 : 2
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 177
+maxpn =       0, maxdn =       0
+....u.
+......
+Bu....
+u.....
+.R....
+...R..
+
+....u.......Bu....u......R.......R..
+
+actionCount 5 : 25
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 148
+maxpn =       0, maxdn =       0
+...B..
+R.....
+...uu.
+....u.
+....R.
+......
+
+...B..R........uu.....u.....R.......
+
+actionCount 5 : 26
+actionCount 7 : 3
+
+5 moves
+myBnum : 1, myRnum ; 2, enBnum : 2, enRnum : 1, maxDepth : 9
+calCount = 181
+maxpn =       0, maxdn =       0
+.u....
+....B.
+...u..
+u.....
+......
+R..R..
+
+.u........B....u..u...........R..R..
+
+actionCount 5 : 27
+actionCount 7 : 3
+
