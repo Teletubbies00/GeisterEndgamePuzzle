@@ -100,24 +100,24 @@ void answerGenerator::loadPuzzleSet(const std::string& filepath) {
 	file.close();
 }
 
-int main() {
-	// 假設你要讀取的檔案路徑如下 (請替換成你實際的檔名)
-	std::string filename = "normal/1221/5.txt";
-
-	answerGenerator temp;
-	temp.loadPuzzleSet(filename);
-
-	std::vector<Data::Puzzle>myPuzzles = temp.puzzleSet;
-	std::cout << "成功讀取了 " << myPuzzles.size() << " 個謎題！\n\n";
-
-	// 印出前 3 個檢查結果
-	for (size_t i = 0; i < myPuzzles.size() && i < 3; ++i) {
-		std::cout << "第 " << (i + 1) << " 題:\n";
-		std::cout << "eBnum:    " << myPuzzles[i].eBnum << "\n";
-		std::cout << "maxDepth: " << myPuzzles[i].maxDepth << "\n";
-		std::cout << "Board:    " << myPuzzles[i].board << "\n";
-		std::cout << "-----------------------\n";
-	}
-
-	return 0;
-}
+//int main() {
+//	// 假設你要讀取的檔案路徑如下 (請替換成你實際的檔名)
+//	std::string filename = "normal/1221/5.txt";
+//
+//	answerGenerator temp;
+//	temp.loadPuzzleSet(filename);
+//
+//	std::vector<Data::Puzzle>myPuzzles = temp.puzzleSet;
+//	std::cout << "成功讀取了 " << myPuzzles.size() << " 個謎題！\n\n";
+//
+//	// 印出前 3 個檢查結果
+//	for (size_t i = 0; i < myPuzzles.size() && i < 3; ++i) {
+//		std::cout << "第 " << (i + 1) << " 題:\n";
+//		std::cout << "eBnum:    " << myPuzzles[i].eBnum << "\n";
+//		std::cout << "maxDepth: " << myPuzzles[i].maxDepth << "\n";
+//		std::cout << "Board:    " << myPuzzles[i].board << "\n";
+//		std::cout << "-----------------------\n";
+//	}
+//
+//	return 0;
+//}

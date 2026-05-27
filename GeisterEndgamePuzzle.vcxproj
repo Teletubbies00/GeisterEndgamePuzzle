@@ -142,6 +142,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="answerGenerator.h" />
+    <ClInclude Include="ApiUploader.h" />
     <ClInclude Include="Bitboard.h" />
     <ClInclude Include="CN.h" />
     <ClInclude Include="ExampleSolution.h" />
@@ -155,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="answerGenerator.cpp" />
+    <ClCompile Include="ApiUploader.cpp" />
     <ClCompile Include="CsvParser.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
